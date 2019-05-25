@@ -1,0 +1,79 @@
+.header{
+	box-shadow: 0px 8px 20px -5px rgba(157, 157, 157, 0.96) !important;
+			
+}
+.reg-bg{
+	background-color: #f8f9fa;
+}
+.sign-up{
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+.form{
+	box-shadow: 0px 8px 20px -5px rgba(157, 157, 157, 0.96);
+			 
+	padding: 0;
+	overflow: hidden;
+}
+
+.height-part{
+	height: 50px;
+	background-color: black;
+}
+.height-part:first-child{
+	height: 50px;
+	background-color: white;
+}
+.height-part h2{
+	line-height: 50px;
+	font-size: 25px;
+	font-family: ;
+	font-weight: 600;
+}
+.account{
+	padding:0 ;
+	border-bottom: 8px solid #212529 ;
+}
+.account li{
+	border: none;
+	border-radius: none;
+	background-color: #212529;
+	color: white;
+	font-family: segoe ui;
+	font-weight: 600;
+	
+}
+.active{
+	border-bottom: 8px solid #ffbf00 ;
+}
+.input{
+	padding: 20%;
+	padding-top: 68px;
+	padding-bottom: 60px;
+}
+input[type="submit"]{
+	box-shadow: 0px 0px 10px 1px rgba(157, 157, 157, 0.56) !important;
+}
+.rad{
+			width: 150px;
+			border-radius: 20px;
+			border: 0.6px solid #FFBF00;
+			background-color: #FFBF00;
+			margin: auto;
+		}
+		.btn-rad{
+			width: 304px;
+			
+		}
+		raddiv{
+			text-align: center;
+			margin: auto;
+		}
+		.rad:hover{
+			border: 0.6px solid #cb9800;
+			background-color: #cb9800;
+		}
+		.rad:visited{
+			border: 0.6px solid #cb9800;
+			background-color: #cb004e;
+		}
