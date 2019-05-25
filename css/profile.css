@@ -25,6 +25,8 @@
 }
 
 .con > div > div > img {
+	width: 170px !important;
+	height: 170px;
 	border-radius: 50%;
 	padding: 20px;
 }

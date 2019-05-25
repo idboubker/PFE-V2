@@ -1,5 +1,10 @@
-<?php    include "connexion.php"; 
- mysqli_set_charset($link,"utf8");  ?>
+<?php    
+
+include "connexion.php"; 
+mysqli_set_charset($link,"utf8");  
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -17,7 +22,7 @@
 </style>
 </head>
 <body>
-   
+  
   
   <div class="fixed-top main-menu">
     <div class="flex-center p-5">
@@ -72,6 +77,7 @@
                 <div class="row">
                 <div class="col-md-4 col-sm-6 p-2">
                     <select name="ville" id="sel-vil" class="form-control chev">
+                    
                     <?php
                     $sql2 = "select * from villes";
                       
@@ -80,11 +86,16 @@
                         echo '<option value="'.$row2['nom_vil'].'">'.$row2['nom_vil'].'</option>';
                     }
                     ?>
+                    
+                    
+                    
                     </select>
                 </div>
 
                 <div class="col-md-4 col-sm-6  p-2">
                     <select name="metier" id="sel-job" class="form-control chev">
+                    
+                    
                     <?php
                     $sql2 = "select * from meties";
                       
@@ -93,6 +104,9 @@
                         echo '<option value="'.$row2['nom_met'].'">'.$row2['nom_met'].'</option>';
                     }
                     ?>
+                    
+                    
+                    
                     </select>
                 </div>
                 <div class="col-md-3  p-2">
