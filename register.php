@@ -159,12 +159,17 @@
 
 										<div class="btn-group btn-group-toggle btn-rad" data-toggle="buttons" align="center">
 											<div class="raddiv">
-												<label class="btn btn-danger rad">
+												<div id="leftrad">
+													<label class="btn btn-danger rad" id="rad1" for="jb-radio-1">
 													<input type="radio" name="gender" id="jb-radio-1" value="Male"> Male
 												</label>
-												<label class="btn btn-danger rad">
+												</div>
+												<div id="rightrad">
+													<label class="btn btn-danger rad" id="rad2" for="jb-radio-2">
 													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Female
 												</label>
+												</div>
+												
 											</div>
 
 										</div>
@@ -284,12 +289,18 @@
 				$('#form-1').attr('style', 'display: none;');
 			});
 		});
-
+		
+		
+		
 
 
 		$(document).ready(function() {
 			$('.nav-button').click(function() {
 				$('body').toggleClass('nav-open');
+			});
+			
+			$('#leftrad').click(function() {
+				$('#rad1').toggleClass('red-rad');
 			});
 		});
 	</script>

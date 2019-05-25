@@ -60,12 +60,13 @@ input[type="submit"]{
 			border: 0.6px solid #FFBF00;
 			background-color: #FFBF00;
 			margin: auto;
+	display: inline-block;
 		}
-		.btn-rad{
+		#leftrad{
 			width: 304px;
 			
 		}
-		raddiv{
+		.raddiv{
 			text-align: center;
 			margin: auto;
 		}
@@ -73,7 +74,9 @@ input[type="submit"]{
 			border: 0.6px solid #cb9800;
 			background-color: #cb9800;
 		}
-		.rad:visited{
-			border: 0.6px solid #cb9800;
-			background-color: #cb004e;
-		}
+		
+
+.red-rad{
+	border: 0.6px solid #cb004e;
+	background-color: #cb004e;
+}
