@@ -1,7 +1,23 @@
 <?php 
-session_start();
+
+
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
+
+if (isset($_POST['search'])) {
+	$ville = $_POST['ville'];
+	$metier = $_POST['metier'];
+$sql=" select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
+$rsl = mysqli_query($link,$sql);
+
+
+
+$nbdata = mysqli_num_rows($rsl);
+$_SESSION['nbdata']= $nbdata;
+
+$found=0;
+
+}
 
 ?>
 
@@ -115,7 +131,7 @@ mysqli_set_charset($link, "utf8");
 			<div class="found">
 				<div class="row">
 					<span class="col-6 col-sm-6 col-md-4 col-lg-3 text-center" id="fnd">
-						<p> <?= $_SESSION['nbdata']; ?> found!</p>
+						<p> <?= $nbdata ?> found!</p>
 					</span>
 					<span class="col-0 col-sm-9 col-md-8 col-lg-8 favth-hidden-sm text-right hidden-small">
 						<hr></span>
@@ -210,9 +226,59 @@ mysqli_set_charset($link, "utf8");
 
 			<div class="col-sm-5 col-md-7 col-lg-8">
 				<div class="row">
-			<?php
-				include "includes/results.php";
-				?>
+				
+				
+				
+			
+				
+								
+<?php 
+
+if( $nbdata > 0){
+
+	while($row = mysqli_fetch_assoc($rsl)){
+		
+		$found++;
+		$image = $row['photo'];
+		if($image == ""){$image = "img/464220-PFPXU4-113.jpg";}
+		
+   ?>
+		<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">
+		<div class=" art shadow">
+		
+		
+		
+			<div class="img_bg" style='background: url("<?php echo $image;?>") no-repeat; '></div> 
+				
+				
+			<hr>
+			<div class="des_art">
+				<h5><?php echo $row['nom_art']." ".$row['prenom_art'] ;?> </h5>
+				<div class="rating left">
+					<span class="fa fa-star "></span>
+					<span class="fa fa-star "></span>
+					<span class="fa fa-star-o "></span>
+					<span class="fa fa-star-o "></span>
+					<span class="fa fa-star-o "></span>
+				</div>
+				<span class="fa fa-heart-o right heart"></span>
+			</div>
+		</div>
+    </div>
+
+<?php 			
+			
+	}
+}
+else{
+    //$found=0;
+}
+
+
+?>				
+				
+				
+				
 				</div>
 				<!--ads center-->
 				<div class="row p-3">

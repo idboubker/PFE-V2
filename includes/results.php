@@ -16,11 +16,14 @@ $rsl = mysqli_query($link,$sql);
 $nbdata = mysqli_num_rows($rsl);
 $_SESSION['nbdata']= $nbdata;
 
-
+$found=0;
 
 if( $nbdata> 0){
 
 	while($row = mysqli_fetch_assoc($rsl)){
+		
+		$found++;
+		
 		$a = $row['photo'];
         if($a == ""){$a = "img/464220-PFPXU4-113.jpg";}
 		echo '<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">
@@ -44,7 +47,8 @@ if( $nbdata> 0){
 	}
 }
 else{
-    echo '<div id="noresults">No results</div>';
+    //$found=0;
 }
 
 }
+?>
