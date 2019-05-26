@@ -27,16 +27,24 @@ $nbdata = mysqli_num_rows($rsl);
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>mou9ef</title>
+	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/rating.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/check-box.css">
-	<script src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/load.css">
+	<script src="js/load.js"></script>
+	
+	
 </head>
 
 <body>
+ 
+	 <?php include_once("includes/loading.html");?>
+
 	<div class="fixed-top main-menu">
 		<div class="flex-center p-5">
 			<ul class="nav flex-column">
@@ -78,6 +86,7 @@ $nbdata = mysqli_num_rows($rsl);
 			</div>
 		</div>
 	</header>
+	<div id="all-all">
 	<div class="container-fluid " style="box-shadow: 0 12px 22px -22px rgba(0, 0, 0, 0.8) inset; background: white;">
 		<div class="container">
 			<div class="row p-4">
@@ -310,6 +319,7 @@ if( $nbdata > 0){
 			</div>
 		</div>
 	</div>
+	</div>
 	<?php include "includes/footer.php"; ?>
 
 
@@ -330,12 +340,21 @@ if( $nbdata > 0){
 
 
 
+
+
+<script src="js/jquery.js"></script>
+
 	<script>
 		$(document).ready(function() {
 			$('.nav-button').click(function() {
 				$('body').toggleClass('nav-open');
 			});
 		});
+		
+		$('#all-all').hide();
+        $('#all-all').delay(1000).fadeIn();
+        $("#loading").delay(1000).fadeOut();
+		
 	</script>
 </body>
 

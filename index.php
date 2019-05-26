@@ -11,18 +11,19 @@ mysqli_set_charset($link,"utf8");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mou9ef</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sh-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/load.css">
 <style>
 </style>
 </head>
 <body>
-  
+  <?php include_once("includes/loading.html");?>
   
   <div class="fixed-top main-menu">
     <div class="flex-center p-5">
@@ -546,6 +547,9 @@ mysqli_set_charset($link,"utf8");
 		</div>
 	</div>
 
+   
+   
+    <script src="js/jquery.js"></script>
     <script>
         function faqControl(){
     $(".answer").hide();
@@ -562,6 +566,12 @@ $(document).ready(function(){
 	$('body').toggleClass('nav-open');
   });
 });
+		
+		
+		
+		$('#all-all').hide();
+        $('#all-all').delay(1000).fadeIn();
+        $("#loading").delay(1000).fadeOut();
 
     </script>
 </body>
