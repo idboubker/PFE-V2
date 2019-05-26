@@ -15,7 +15,7 @@ $rsl = mysqli_query($link,$sql);
 $nbdata = mysqli_num_rows($rsl);
 
 
-$found=0;
+
 
 }
 
@@ -238,7 +238,7 @@ if( $nbdata > 0){
 
 	while($row = mysqli_fetch_assoc($rsl)){
 		
-		$found++;
+		
 		$image = $row['photo'];
 		if($image == ""){$image = "img/464220-PFPXU4-113.jpg";}
 		
@@ -270,9 +270,7 @@ if( $nbdata > 0){
 			
 	}
 }
-else{
-    //$found=0;
-}
+
 
 
 ?>				
