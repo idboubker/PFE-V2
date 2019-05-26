@@ -3,6 +3,7 @@
 
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
+
 $nbdata=0;
 if (isset($_POST['search'])) {
 	$ville = $_POST['ville'];
