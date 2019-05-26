@@ -74,12 +74,12 @@
 					<div class="height-part">
 						<ul class="list-group">
 							<div class="row">
-								<span id="b-account" class="col-xs-6 col-sm-6 col-md-6 account active">
+								<span id="b-account" class="col-6 col-xs-6 col-sm-6 col-md-6 account active">
 
 									<li class="list-group-item">Basic Account</li>
 
 								</span>
-								<span id="h-account" class="col-xs-6 col-sm-6 col-md-6 account">
+								<span id="h-account" class="col-6 col-xs-6 col-sm-6 col-md-6 account">
 
 									<li class="list-group-item">Hirafy Account</li>
 
@@ -157,18 +157,18 @@
 
 
 
-										<div class="btn-group btn-group-toggle btn-rad" data-toggle="buttons" align="center">
+										<div class="btn-group btn-group-toggle btn-rad"  align="center">
 											<div class="raddiv">
-												<div id="leftrad">
-													<label class="btn btn-danger rad" id="rad1" for="jb-radio-1">
+											
+													<label class="btn btn-success rad" id="rad1" for="jb-radio-1">
 													<input type="radio" name="gender" id="jb-radio-1" value="Male"> Male
 												</label>
-												</div>
-												<div id="rightrad">
-													<label class="btn btn-danger rad" id="rad2" for="jb-radio-2">
+												
+												
+													<label class="btn btn-success rad" id="rad2" for="jb-radio-2">
 													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Female
 												</label>
-												</div>
+												
 												
 											</div>
 
@@ -299,8 +299,17 @@
 				$('body').toggleClass('nav-open');
 			});
 			
-			$('#leftrad').click(function() {
-				$('#rad1').toggleClass('red-rad');
+			$('#rad1').click(function() {
+				
+					$('#rad1').addClass('red-rad');
+					$('#rad2').removeClass('red-rad');
+				
+			});
+			$('#rad2').click(function() {
+				
+					$('#rad2').addClass('red-rad');
+					$('#rad1').removeClass('red-rad');
+				
 			});
 		});
 	</script>
