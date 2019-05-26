@@ -36,7 +36,7 @@ $nbdata = mysqli_num_rows($rsl);
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/check-box.css">
 	<link rel="stylesheet" href="css/load.css">
-	<script src="js/load.js"></script>
+	
 	
 	
 </head>
@@ -323,27 +323,13 @@ if( $nbdata > 0){
 	<?php include "includes/footer.php"; ?>
 
 
-	<div class="container-fluid golden-footer">
-		<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
-
-					<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-
-				</span>
-			</div>
-		</div>
-	</div>
 
 
 
 
 
 <script src="js/jquery.js"></script>
-
+<script src="js/load.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.nav-button').click(function() {
@@ -351,9 +337,7 @@ if( $nbdata > 0){
 			});
 		});
 		
-		$('#all-all').hide();
-        $('#all-all').delay(1000).fadeIn();
-        $("#loading").delay(1000).fadeOut();
+	
 		
 	</script>
 </body>

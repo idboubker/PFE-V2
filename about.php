@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mou9ef</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
@@ -9,12 +10,14 @@
     <link rel="stylesheet" href="css/sh-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/about.css">
-    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/load.css">
+    
+   
 <style>
 </style>
 </head>
 <body>
-   
+    <?php include_once("includes/loading.html");?>
   
   <div class="fixed-top main-menu">
     <div class="flex-center p-5">
@@ -28,6 +31,8 @@
       </ul>
     </div>
   </div> <!--main-menu end-->
+   
+   
     <header class="container">
     <div class="row">
         <div class="left-head col-1 col-md-4 col-sm-2">
@@ -62,7 +67,7 @@
     
     
     
-	
+	<div id="all-all">
    
    <div class="aboutus-section" style>
         <div class="container">
@@ -121,27 +126,13 @@
         </div>
     </div>
    
-   
+   </div>
    
     
     <?php include "includes/footer.php"; ?>
-    
-	<div class="container-fluid golden-footer">
-	<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
-					
-							<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-						
-				</span>
-			</div>
-		</div>
-	</div>
-
-
+ 
+ <script src="js/jquery.js"></script>
+ <script src="js/load.js"></script>
 <script>
 	
 		$(document).ready(function(){

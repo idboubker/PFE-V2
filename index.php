@@ -19,6 +19,7 @@ mysqli_set_charset($link,"utf8");
     <link rel="stylesheet" href="css/sh-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/load.css">
+    
 <style>
 </style>
 </head>
@@ -67,7 +68,7 @@ mysqli_set_charset($link,"utf8");
     </header>
 
 
-
+<div id="all-all">
     <div class="container-fluid in-search"  style="box-shadow: 0 30px 22px -22px rgba(0, 0, 0, 0.8) inset !important;">
          <div class="container text-center">
              <div class="row">
@@ -121,7 +122,7 @@ mysqli_set_charset($link,"utf8");
          </div>
     </div>
     <div class="seprate"></div>
-    <div class="container ">
+    <div class="container " >
 
     <div class="wum"><!--wum=why use mo9ef-->
     <h3 class="text-center">WHY USE MOU9EF ?</h3><div class="seprate"></div>
@@ -530,26 +531,19 @@ mysqli_set_charset($link,"utf8");
         </div>
     </div>
 
+   
+   
+   
+ </div>  
+   
     <?php include "includes/footer.php"; ?>
 
-	<div class="container-fluid golden-footer">
-	<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
-					
-							<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-						
-				</span>
-			</div>
-		</div>
-	</div>
+
 
    
-   
+    
     <script src="js/jquery.js"></script>
+   	<script src="./js/load.js"></script>
     <script>
         function faqControl(){
     $(".answer").hide();
@@ -569,9 +563,7 @@ $(document).ready(function(){
 		
 		
 		
-		$('#all-all').hide();
-        $('#all-all').delay(1000).fadeIn();
-        $("#loading").delay(1000).fadeOut();
+	
 
     </script>
 </body>

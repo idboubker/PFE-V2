@@ -11,15 +11,19 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>mou9ef</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/register.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/load.css">
+	
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+ <?php include_once("includes/loading.html");?>
 	<div class="fixed-top main-menu">
 		<div class="flex-center p-5">
 			<ul class="nav flex-column">
@@ -61,7 +65,10 @@
 			</div>
 		</div>
 	</header>
-
+	
+	
+	<div id="all-all">
+	
 	<div class="container-fluid reg-bg " style="box-shadow: 0 12px 22px -22px rgba(0, 0, 0, 0.8) inset;">
 		<div class="container">
 			<div class="sign-up row">
@@ -251,28 +258,16 @@
 			</div>
 		</div>
 	</div>
-
+	
+	</div>
 
 
 
 	<?php include "includes/footer.php"; ?>
 
-	<div class="container-fluid golden-footer">
-		<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
 
-					<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-
-				</span>
-			</div>
-		</div>
-	</div>
-
-
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/load.js"></script>
 	<script>
 		$(function() {
 			$('#b-account').click(function() {
