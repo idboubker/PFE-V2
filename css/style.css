@@ -243,7 +243,8 @@
 			height: 250px;
 			
 			/* background: url("../img/avatar4.jpg") no-repeat; */
-			background-size: cover;
+			background-size:10px !important;
+			background-position: center top;
 		}
 
 		#noresults{

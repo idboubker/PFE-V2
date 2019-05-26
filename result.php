@@ -3,7 +3,7 @@
 
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
-
+$nbdata=0;
 if (isset($_POST['search'])) {
 	$ville = $_POST['ville'];
 	$metier = $_POST['metier'];
@@ -13,7 +13,7 @@ $rsl = mysqli_query($link,$sql);
 
 
 $nbdata = mysqli_num_rows($rsl);
-$_SESSION['nbdata']= $nbdata;
+
 
 $found=0;
 
@@ -248,7 +248,7 @@ if( $nbdata > 0){
 		
 		
 		
-			<div class="img_bg" style='background: url("<?php echo $image;?>") no-repeat; '></div> 
+			<div style='background: url("<?php echo $image;?>") no-repeat;background-size:100% 100% !important; '  class="img_bg" ></div> 
 				
 				
 			<hr>
