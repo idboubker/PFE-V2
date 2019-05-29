@@ -1,24 +1,78 @@
-<?php 
+<?php
 
 
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
+session_start();
 
-$nbdata=0;
+$nbdata = 0;
 if (isset($_POST['search'])) {
 	$ville = $_POST['ville'];
 	$metier = $_POST['metier'];
-$sql=" select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
-$rsl = mysqli_query($link,$sql);
+
+	$_SESSION['ville'] = $ville;
+	$_SESSION['metier'] = $metier;
 
 
+	$sql = " select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
+	$rsl = mysqli_query($link, $sql);
 
-$nbdata = mysqli_num_rows($rsl);
-
-
-
-
+	$nbdata = mysqli_num_rows($rsl);
 }
+
+// filtring result
+
+if (isset($_POST['searchFilter'])) {
+
+	$ville = $_SESSION['ville'];
+	$metier = $_SESSION['metier'];
+
+	$filter1 = $_POST['filter1'];
+
+	$xfilt =  $_POST['xfilt'];
+	if ($xfilt != '') {
+		$xfilt = $_POST['xfilt'];
+	} else {
+		$xfilt = '%';
+	}
+
+	if (isset($_POST['EmailIncl'])) {
+		$EmInc = '%@%';
+	} else {
+		$EmInc = '%';
+	}
+
+
+	if (isset($_POST['whatsappInc'])) {
+		$whtsinc = '%0%';
+	} else {
+		$whtsinc = '%';
+	}
+
+
+	if (isset($_POST['resumInc'])) {
+		$resumInc = '%a%';
+	} else {
+		$resumInc = '%';
+	}
+
+	// a.nom_art	like '$xfilt' and
+
+	// filter 2
+	$filter2 = $_POST['filter2'];
+
+
+
+	if ($filter1 != 'All') {
+		$sql = " select * from artisan a, artisan_details  d where d.description like '$resumInc' and d.whatsapp like '$whtsinc' and a.email_art like '$EmInc' and  a.nom_art	like '$xfilt' and  d.typeTravail = '$filter1' and a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
+	} else {
+		$sql = " select * from artisan a, artisan_details d where d.description like '$resumInc' and d.whatsapp like '$whtsinc' and a.email_art like '$EmInc' and a.nom_art	like '$xfilt' and  a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art order by $filter2";
+	}
+
+	$rsl = mysqli_query($link, $sql);
+	$nbdata = mysqli_num_rows($rsl);
+}
+// end of filtring results
 
 ?>
 
@@ -29,21 +83,21 @@ $nbdata = mysqli_num_rows($rsl);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>mou9ef</title>
-	
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/rating.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/check-box.css">
 	<link rel="stylesheet" href="css/load.css">
-	
-	
-	
+
+
+
 </head>
 
 <body>
- 
-	 <?php include_once("includes/loading.html");?>
+
+	<?php include_once("includes/loading.html"); ?>
 
 	<div class="fixed-top main-menu">
 		<div class="flex-center p-5">
@@ -87,238 +141,234 @@ $nbdata = mysqli_num_rows($rsl);
 		</div>
 	</header>
 	<div id="all-all">
-	<div class="container-fluid " style="box-shadow: 0 12px 22px -22px rgba(0, 0, 0, 0.8) inset; background: white;">
-		<div class="container">
-			<div class="row p-4">
-				<div class="ads">
-					<img src="" alt="">
-				</div>
-			</div>
-
-			<div class="">
-				<form action="result.php" method="POST">
-
-
-					<div class="row text-center">
-						<div class="col-md-2 xsd"></div>
-						<div class="col-sm-6 col-md-3 p-2 p-lg-3 p-md-1 p-sm-1 ">
-							<select name="ville" id="sel-vil" class="form-control chev">
-								<?php
-								$sql2 = "select * from villes";
-								$result2 = mysqli_query($link, $sql2);
-								while ($row2 = mysqli_fetch_assoc($result2)) {
-									echo '<option value="'.$row2['nom_vil'].'">'.$row2['nom_vil'].'</option>';
-								}
-								?>
-							</select>
-						</div>
-
-						<div class="col-sm-6 col-md-3 p-2 p-lg-3 p-md-1 p-sm-1">
-							<select name="metier" id="sel-job" class="form-control chev">
-								<?php
-								$sql2 = "select * from meties";
-
-								$result2 = mysqli_query($link, $sql2);
-								while ($row2 = mysqli_fetch_assoc($result2)) {
-									echo '<option value="' . $row2['nom_met'] . '">' . $row2['nom_met'] . '</option>';
-								}
-								?>
-							</select>
-						</div>
-
-						<div class="col-sm-6 offset-sm-3 offset-md-0 col-md-2 p-2 p-lg-3 p-md-1 p-sm-1">
-							<input type="submit" name="search" class="btn btn-success srh" value="SEARCH">
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-
-
-				</form>
-			</div>
-
-
-
-			<div class="found">
-				<div class="row">
-					<span class="col-6 col-sm-6 col-md-4 col-lg-3 text-center" id="fnd">
-						<p> <?= $nbdata ?> found!</p>
-					</span>
-					<span class="col-0 col-sm-9 col-md-8 col-lg-8 favth-hidden-sm text-right hidden-small">
-						<hr></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container container-sm-fluid">
-		<div class="row ">
-			<!--content-->
-
-			<div class="col-sm-6 col-md-4 col-lg-3 col_filter text-center shadow m-2">
-				<h3 class="ad_search">ADVANCED SEARCH</h3>
-				<hr>
-
-				<button class="btn btn_grid" type="submit">GRID</button><br>
-				<button class="btn btn-info btn_map" type="submit">MAP</button>
-
-				<form action="" method="">
-
-					<select name="" id="" class="form-control input_select chev">
-						<option value="">individual</option>
-						<option value="">Marrakech</option>
-						<option value="">Rabat</option>
-					</select>
-
-					<select name="" id="" class="form-control input_select chev">
-						<option value="">sort by..</option>
-						<option value="">Lawyer</option>
-						<option value="">Plumber</option>
-					</select>
-
-					<select name="" id="" class="form-control input_select chev">
-						<option value="">selector..</option>
-						<option value="">Lawyer</option>
-						<option value="">Plumber</option>
-					</select>
-
-
-					<input type="text" class="form-control input_select" placeholder="search by name, email..">
-
-
-
-
-
-
-
-					<div class="left">
-						<input type="checkbox" class="" id="ch_rate">
-						<label for="ch_rate">Rate </label>
-					</div>
-
-
-
-
-					<br>
-					<hr class="space">
-					<div class="left">
-						<input type="checkbox" class="" id="resume1">
-						<label for="resume1">Resume included</label>
-					</div>
-
-					<br>
-					<hr class="space">
-					<div class="left">
-						<input type="checkbox" class="" id="resume2">
-						<label for="resume2">WhatsApp included</label>
-					</div>
-
-					<br>
-					<hr class="space">
-					<div class="left">
-						<input type="checkbox" class="" id="resume3">
-						<label for="resume3">Email included</label>
-					</div>
-
-					<br>
-					<hr class="space">
-					<button type="submit" class="btn btn-success srh btn_grid sub">Go
-						<img src="img/go.png" alt="">
-					</button>
-				</form>
-
-				<br><br>
-				<hr class="space">
-				<!--ads-->
-				<div class="lb_ads xds"></div>
-
-
-			</div>
-
-			<div class="col-sm-5 col-md-7 col-lg-8">
-				<div class="row">
-				
-				
-				
-			
-				
-								
-<?php 
-
-if( $nbdata > 0){
-
-	while($row = mysqli_fetch_assoc($rsl)){
-		
-		
-		$image = $row['photo'];
-		if($image == ""){$image = "img/464220-PFPXU4-113.jpg";}
-		
-   ?>
-		<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">
-		<div class=" art shadow">
-		
-		
-		
-			<div style='background: url("<?php echo $image;?>") no-repeat;background-size:100% 100% !important; '  class="img_bg" ></div> 
-				
-				
-			<hr>
-			<div class="des_art">
-				<h5><?php echo $row['nom_art']." ".$row['prenom_art'] ;?> </h5>
-				<div class="rating left">
-					<span class="fa fa-star "></span>
-					<span class="fa fa-star "></span>
-					<span class="fa fa-star-o "></span>
-					<span class="fa fa-star-o "></span>
-					<span class="fa fa-star-o "></span>
-				</div>
-				<span class="fa fa-heart-o right heart"></span>
-			</div>
-		</div>
-    </div>
-
-<?php 			
-			
-	}
-}
-
-
-
-?>				
-				
-				
-				
-				</div>
-				<!--ads center-->
-				<div class="row p-3">
+		<div class="container-fluid " style="box-shadow: 0 12px 22px -22px rgba(0, 0, 0, 0.8) inset; background: white;">
+			<div class="container">
+				<div class="row p-4">
 					<div class="ads">
 						<img src="" alt="">
 					</div>
 				</div>
 
+				<div class="">
+					<form action="result.php" method="POST">
+
+
+						<div class="row text-center">
+							<div class="col-md-2 xsd"></div>
+							<div class="col-sm-6 col-md-3 p-2 p-lg-3 p-md-1 p-sm-1 ">
+								<select name="ville" id="sel-vil" class="form-control chev">
+									<?php
+									$sql2 = "select * from villes";
+									$result2 = mysqli_query($link, $sql2);
+									while ($row2 = mysqli_fetch_assoc($result2)) {
+										echo '<option value="' . $row2['nom_vil'] . '">' . $row2['nom_vil'] . '</option>';
+									}
+									?>
+								</select>
+							</div>
+
+							<div class="col-sm-6 col-md-3 p-2 p-lg-3 p-md-1 p-sm-1">
+								<select name="metier" id="sel-job" class="form-control chev">
+									<?php
+									$sql2 = "select * from meties";
+
+									$result2 = mysqli_query($link, $sql2);
+									while ($row2 = mysqli_fetch_assoc($result2)) {
+										echo '<option value="' . $row2['nom_met'] . '">' . $row2['nom_met'] . '</option>';
+									}
+									?>
+								</select>
+							</div>
+
+							<div class="col-sm-6 offset-sm-3 offset-md-0 col-md-2 p-2 p-lg-3 p-md-1 p-sm-1">
+								<input type="submit" name="search" class="btn btn-success srh" value="SEARCH">
+							</div>
+							<div class="col-md-2"></div>
+						</div>
+
+
+					</form>
+				</div>
+
+
+
+				<div class="found">
+					<div class="row">
+						<span class="col-6 col-sm-6 col-md-4 col-lg-3 text-center" id="fnd">
+							<p> <?= $nbdata ?> found!</p>
+						</span>
+						<span class="col-0 col-sm-9 col-md-8 col-lg-8 favth-hidden-sm text-right hidden-small">
+							<hr></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container container-sm-fluid">
+			<div class="row ">
+				<!--content-->
+
+				<div class="col-sm-6 col-md-4 col-lg-3 col_filter text-center shadow m-2">
+					<h3 class="ad_search">ADVANCED SEARCH</h3>
+					<hr>
+
+					<button class="btn btn_grid" type="submit">GRID</button><br>
+					<button class="btn btn-info btn_map" type="submit">MAP</button>
+
+					<form action="result.php" method="POST">
+
+						<select name="filter1" id="" class="form-control input_select chev">
+							<option value="All">All</option>
+							<option value="Individual">Individual</option>
+							<option value="Company">Company</option>
+						</select>
+
+						<select name="filter2" id="" class="form-control input_select chev">
+							<option value="id_art" disabled>sort by..</option>
+							<option value="nom_art">Name</option>
+							<option value="dateInscription">Registration date</option>
+						</select>
+
+						<select name="filter3" id="" class="form-control input_select chev">
+							<option value="">selector..</option>
+							<option value="">Lawyer</option>
+							<option value="">Plumber</option>
+						</select>
+
+
+						<input type="text" name="xfilt" class="form-control input_select" placeholder="search by last name ..">
+
+
+
+
+
+
+
+						<div class="left">
+							<input type="checkbox" name="rate" value="rate" class="" id="ch_rate">
+							<label for="ch_rate">Rate </label>
+						</div>
+
+
+
+
+						<br>
+						<hr class="space">
+						<div class="left">
+							<input type="checkbox" name="resumInc" class="" id="resume1">
+							<label for="resume1">Resume included</label>
+						</div>
+
+						<br>
+						<hr class="space">
+						<div class="left">
+							<input type="checkbox" name="whatsappInc" class="" id="resume2">
+							<label for="resume2">WhatsApp included</label>
+						</div>
+
+						<br>
+						<hr class="space">
+						<div class="left">
+							<input type="checkbox" name="EmailIncl" class="" id="resume3">
+							<label for="resume3">Email included</label>
+						</div>
+
+						<br>
+						<hr class="space">
+						<input type="submit" name="searchFilter" class="btn btn-success srh btn_grid sub" value="Go">
+						<!-- 	<button type="submit" name="filter" class="btn btn-success srh btn_grid sub">Go 
+						<img src="img/go.png" alt="">   
+					</button>	-->
+					</form>
+
+					<br><br>
+					<hr class="space">
+					<!--ads-->
+					<div class="lb_ads xds"></div>
+
+
+				</div>
+
+				<div class="col-sm-5 col-md-7 col-lg-8">
+					<div class="row">
+
+
+
+
+
+
+						<?php
+						if ($nbdata > 0) {
+							while ($row = mysqli_fetch_assoc($rsl)) {
+								$image = $row['photo'];
+								if ($image == "") {
+									$image = "img/464220-PFPXU4-113.jpg";
+								}
+								?>
+
+								<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">
+									<div class=" art shadow">
+
+
+
+										<div style='background: url("<?php echo $image; ?>") no-repeat;background-size:100% 100% !important; ' class="img_bg"></div>
+
+
+										<hr>
+										<div class="des_art">
+											<h5><?php echo $row['nom_art'] . " " . $row['prenom_art']; ?> </h5>
+											<div class="rating left">
+												<span class="fa fa-star "></span>
+												<span class="fa fa-star "></span>
+												<span class="fa fa-star-o "></span>
+												<span class="fa fa-star-o "></span>
+												<span class="fa fa-star-o "></span>
+											</div>
+											<span class="fa fa-heart-o right heart"></span>
+										</div>
+									</div>
+								</div>
+
+							<?php
+
+						}
+					}
+					?>
+
+
+
+					</div>
+					<!--ads center-->
+					<div class="row p-3">
+						<div class="ads">
+							<img src="" alt="">
+						</div>
+					</div>
+
+				</div>
+
+
 			</div>
 
 
-		</div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-8 text-center paging">
+					<a href=""><button class="paging-num">1</button></a>
+					<a href=""><button class="paging-num">2</button></a>
+					<a href=""><button class="paging-num">3</button></a>
+					<a href=""><button class="paging-gt"><img src="img/gt.svg" alt=""></button></a>
 
 
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-8 text-center paging">
-				<a href=""><button class="paging-num">1</button></a>
-				<a href=""><button class="paging-num">2</button></a>
-				<a href=""><button class="paging-num">3</button></a>
-				<a href=""><button class="paging-gt"><img src="img/gt.svg" alt=""></button></a>
+				</div>
+			</div>
 
-
+			<div class="row">
+				<div class="f-ads">
+					<img src="" alt="">
+				</div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="f-ads">
-				<img src="" alt="">
-			</div>
-		</div>
-	</div>
 	</div>
 	<?php include "includes/footer.php"; ?>
 
@@ -328,17 +378,14 @@ if( $nbdata > 0){
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/load.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/load.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.nav-button').click(function() {
 				$('body').toggleClass('nav-open');
 			});
 		});
-		
-	
-		
 	</script>
 </body>
 
