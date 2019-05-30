@@ -228,7 +228,7 @@
                         <ul class="list-inline menu-left mb-0">
                             <li class="list-inline-item">
                                 <button type="button" class="button-menu-mobile open-left waves-effect">
-                                    <i class="ion-navicon"></i>
+                                    <i class="fa fa-navicon"></i>
                                 </button>
                             </li>
                             <li class="hide-phone list-inline-item app-search">
