@@ -248,19 +248,22 @@ if( $nbdata > 0){
 
 	while($row = mysqli_fetch_assoc($rsl)){
 		
-		
+		$ida=$row['id_art'];
 		$image = $row['photo'];
 		if($image == ""){$image = "img/464220-PFPXU4-113.jpg";}
 		
+		
+		
    ?>
+  
 		<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">
 		<div class=" art shadow">
-		
+		 <a href="profile.php?ida=<?=$ida?>" class="clickable">
 		
 		
 			<div style='background: url("<?php echo $image;?>") no-repeat;background-size:100% 100% !important; '  class="img_bg" ></div> 
 				
-				
+		</a>		
 			<hr>
 			<div class="des_art">
 				<h5><?php echo $row['nom_art']." ".$row['prenom_art'] ;?> </h5>
@@ -273,9 +276,10 @@ if( $nbdata > 0){
 				</div>
 				<span class="fa fa-heart-o right heart"></span>
 			</div>
+			
 		</div>
     </div>
-
+	
 <?php 			
 			
 	}

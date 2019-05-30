@@ -12,9 +12,18 @@
 			padding: 0;
 			font-family: Roboto;
 		}
-		.fa{
+.clickable{
+	text-decoration: none;
+	width: auto;
+	height: auto;
+	color: transparent;
+	background-color: transparent;
+}
+
+.fa{
 			font-size:20px !important;
 		}
+
 .heart{
 	color: red;
 	border-color: red;

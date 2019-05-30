@@ -142,19 +142,19 @@ if($photo == ""){
 
 							<nav>
 								<table class="text-left">
-									<tr id="ABOUT" class="active">
+									<tr id="ABOUT" class="active pointer">
 										<td width="40"><img src="img/our-font-awesome/about.svg" alt=""></td>
 										<td>ABOUT</td>
 									</tr>
-									<tr id="VIEW-ON-MAP" class="">
+									<tr id="VIEW-ON-MAP" class="pointer">
 										<td><img src="img/our-font-awesome/view_on_map.svg" alt=""></td>
 										<td>VIEW ON MAP</td>
 									</tr>
-									<tr id="REVIEWS" class="">
+									<tr id="REVIEWS" class="pointer">
 										<td><img src="img/our-font-awesome/reviews.svg" alt=""></td>
 										<td>REVIEWS</td>
 									</tr>
-									<tr id="PORTFOLIO" class="">
+									<tr id="PORTFOLIO" class="pointer">
 										<td><img src="img/our-font-awesome/stars.svg" alt=""></td>
 										<td>PORTFOLIO</td>
 									</tr>

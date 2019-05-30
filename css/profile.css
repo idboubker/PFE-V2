@@ -1,3 +1,6 @@
+.pointer{
+	cursor: pointer !important;
+}
 .all {
 	background-color: #F8F9FA;
 }
@@ -547,4 +550,8 @@ tr:nth-child(5) .inside-holder {
 	padding: 00px;
 	height: 130px;
 	border: 2px solid #F2F2F2;
+}
+
+#ABOUT:hover,#VIEW-ON-MAP:hover,#REVIEWS:hover,#PORTFOLIO:hover{
+	cursor: pointer;
 }
