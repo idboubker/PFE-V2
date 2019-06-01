@@ -125,7 +125,7 @@ mysqli_set_charset($link,"utf8");
     <div class="container " >
 
     <div class="wum"><!--wum=why use mo9ef-->
-    <h3 class="text-center">WHY USE MOU9EF ?</h3><div class="seprate"></div>
+    <h3 class="text-center">POURQUOI DEVRAIS-JE UTILISER MOU9EF?</h3><div class="seprate"></div>
         <div class="row">
         <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-3 ">
             <div class="feature text-center o shadow">
@@ -133,7 +133,7 @@ mysqli_set_charset($link,"utf8");
                     <img src="img/star.svg" alt="">
                 </div>
                 <div class="feature-title">
-                    <p>find the best <br>talent in one click</p>
+                    <p>Trouver le meilleur <br>talent en un clic</p>
                 </div>
 
             </div>
@@ -146,7 +146,7 @@ mysqli_set_charset($link,"utf8");
                     <img src="img/sut.svg" alt="">
                 </div>
                 <div class="feature-title">
-                    <p>save your time <br>and your effort</p>
+                    <p>Économisez votre temps <br> et vos efforts</p>
                 </div>
 
             </div>
@@ -160,7 +160,7 @@ mysqli_set_charset($link,"utf8");
                     <img src="img/mp.svg" alt="">
                 </div>
                 <div class="feature-title">
-                    <p>multidisciplinary<br>profiles</p>
+                    <p>Profils <br> multidisciplinaires</p>
                 </div>
 
             </div>
@@ -173,7 +173,7 @@ mysqli_set_charset($link,"utf8");
                     <img src="img/money.svg" alt="">
                 </div>
                 <div class="feature-title">
-                    <p>totally free</p>
+                    <p>Complètement gratuit</p>
                 </div>
 
             </div>

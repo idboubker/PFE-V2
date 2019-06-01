@@ -24,12 +24,12 @@ if(isset($_POST['ok'])){
                     <div class="row ">
                         <div class="col-md-7 f-logo">
                             <img src="img/logo-white.png" alt=""><br>
-                            <p>the biggest Moroccan craftsman's network</p>
+                            <p>1er annuaire collaboratif des Artisans en Maroc</p>
                         </div>
                         <div class="col-md-5 f-menu">
-                            <a href="">About Us</a><br>
+                            <a href="">Qui somes-nous?</a><br>
                             <a href="">Contact</a><br>
-                            <a href="">Terms & Conditions</a>
+                          
                         </div>
                     </div>
                 </div>
@@ -41,20 +41,20 @@ if(isset($_POST['ok'])){
                     </div>
 
                     <div class="col-md-12 f-wrap-mail">
-                        <div><p>Subscribe to our newsletter</p></div>
+                        <div><p>Abonnez-vous à notre newsletter</p></div>
                         <div class="f-mail">
                             <form action="" method="POST">
                             <input type="email" name="email" class="f-mail-term">
-                            <input type="submit" name="ok" class="f-mail-button" value="Send">
+                            <input type="submit" name="ok" class="f-mail-button" value="Envoyer">
                             </form>
                         </div>
                     </div>
                 </div>
                 </div>
                 <div class="col-md-3 f-logo f-menu">
-                    <a href="">497 Evergreen Rd. Roseville, CA 95673</a><br>
-                    <a href="">+44 345 678 903</a><br>
-                    <a href="">adobexd@mail.com</a>
+                    <a href="">Marrakech, Maroc</a><br>
+                    <a href="">+212 6 39 65 31 87</a><br>
+                    <a href="">mou9ef.services@gmail.com</a>
                 </div>
             </div>
         </div>

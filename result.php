@@ -4,35 +4,109 @@
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
 
+session_start();
+
 $nbdata=0;
 if (isset($_POST['search'])) {
-	$ville = $_POST['ville'];
-	$metier = $_POST['metier'];
-$sql=" select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
-$rsl = mysqli_query($link,$sql);
+			$ville = $_POST['ville'];
+			$metier = $_POST['metier'];
+			$sql=" select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
+			$rsl = mysqli_query($link,$sql);
+			$nbdata = mysqli_num_rows($rsl);
 
 
-
-$nbdata = mysqli_num_rows($rsl);
-
-
-
-
+			$_SESSION['ville'] = $ville;
+			$_SESSION['metier'] = $metier;
 }
 
+
+if (isset($_POST['searchFilter'])) {
+			$ville =	$_SESSION['ville'];
+			$metier = $_SESSION['metier'];
+			
+			
+
+			// d.typeTravail
+			$typeTrav = $_POST['typeTrav'];
+			if($typeTrav == ''){
+				$typeTrav = '%';
+			}
+
+			// order by  d.dateInscription	
+			$sortby = $_POST['sortBy'];
+
+			//Email Filter
+			if (isset($_POST['emailF'])) { $EmInc = '%@%'; }
+			else { $EmInc = '%'; }
+
+			//Whatsapp Filter  d.whatsapp
+			if (isset($_POST['whatsappF'])) { $whtsinc = '%0%'; }
+			else { $whtsinc = '%'; }
+
+			// Discription Filter
+			if (isset($_POST['descrF'])) { $resumInc = '%a%'; } 
+			else { $resumInc = '%';	}
+
+			// Email or Last Name Filter on First Name 
+			$filter2 = $_POST['searchBy'];
+			if($filter2==""){$filter2='%';}
+
+
+			$sql=" select * from artisan a, artisan_details d where d.typeTravail like '$typeTrav' and a.email_art like '$EmInc' and d.whatsapp like '$whtsinc' and d.description like '$resumInc' and (a.nom_art like '$filter2' or a.prenom_art like '$filter2' or a.email_art like '$filter2') and a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art order by $sortby";
+			$rsl = mysqli_query($link,$sql);
+			$nbdata = mysqli_num_rows($rsl);
+}
+
+
+
+
+
+
+
+
+$conn = mysqli_connect('localhost', 'root', '', 'mou9ef');
+
+if (isset($_POST['save'])) {
+    $uID = $conn->real_escape_string($_POST['uID']);
+    $ratedIndex = $conn->real_escape_string($_POST['note_eva']);
+    $ratedIndex++;
+
+    if (!$uID) {
+        $conn->query("INSERT INTO evaluation (rateIndex) VALUES ('$ratedIndex')");
+        $sql = $conn->query("SELECT id_eva FROM evaluation ORDER BY id_eva DESC LIMIT 1");
+        $uData = $sql->fetch_assoc();
+        $uID = $uData['id_eva'];
+    } else
+        $conn->query("UPDATE evaluation SET note_eva='$ratedIndex' WHERE id_eva='$uID'");
+
+    exit(json_encode(array('id_eva' => $uID)));
+}
+
+$sql = $conn->query("SELECT id_eva FROM evaluation");
+$numR = $sql->num_rows;
+
+$sql = $conn->query("SELECT SUM(note_eva) AS total FROM evaluation");
+$rData = $sql->fetch_array();
+$total = $rData['total'];
+
+$avg = $total / $numR;
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>mou9ef</title>
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/rating.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/check-box.css">
 	<link rel="stylesheet" href="css/load.css">
@@ -158,42 +232,42 @@ $nbdata = mysqli_num_rows($rsl);
 				<h3 class="ad_search">ADVANCED SEARCH</h3>
 				<hr>
 
-				<button class="btn btn_grid" type="submit">GRID</button><br>
-				<button class="btn btn-info btn_map" type="submit">MAP</button>
+				<!-- <button class="btn btn_grid" type="submit">GRID</button><br>
+				<button class="btn btn-info btn_map" type="submit">MAP</button> -->
 
-				<form action="" method="">
+				<form action="result.php" method="POST">
 
-					<select name="" id="" class="form-control input_select chev">
-						<option value="">individual</option>
-						<option value="">Marrakech</option>
-						<option value="">Rabat</option>
+					<select name="typeTrav" id="" class="form-control input_select chev">
+					<option value="" >Individual or Company</option>
+						<option value="individual">individual</option>
+						<option value="company">company</option>
 					</select>
 
-					<select name="" id="" class="form-control input_select chev">
-						<option value="">sort by..</option>
-						<option value="">Lawyer</option>
-						<option value="">Plumber</option>
+					<select name="sortBy" id="" class="form-control input_select chev">
+							<option value="a.id_art" >Sort By ..</option>
+							<option value="a.nom_art">Name</option>
+							<option value="a.dateInscription">Registration date</option>
 					</select>
 
-					<select name="" id="" class="form-control input_select chev">
+					<!-- <select name="" id="" class="form-control input_select chev">
 						<option value="">selector..</option>
 						<option value="">Lawyer</option>
 						<option value="">Plumber</option>
-					</select>
+					</select> -->
 
 
-					<input type="text" class="form-control input_select" placeholder="search by name, email..">
-
-
-
+					<input type="text" class="form-control input_select" name="searchBy" placeholder="search by name, email..">
 
 
 
 
-					<div class="left">
+
+
+
+					<!-- <div class="left">
 						<input type="checkbox" class="" id="ch_rate">
 						<label for="ch_rate">Rate </label>
-					</div>
+					</div> -->
 
 
 
@@ -201,27 +275,27 @@ $nbdata = mysqli_num_rows($rsl);
 					<br>
 					<hr class="space">
 					<div class="left">
-						<input type="checkbox" class="" id="resume1">
-						<label for="resume1">Resume included</label>
+						<input type="checkbox" name="descrF" class="" id="resume1">
+						<label for="resume1"> Resume included</label>
 					</div>
 
 					<br>
 					<hr class="space">
 					<div class="left">
-						<input type="checkbox" class="" id="resume2">
-						<label for="resume2">WhatsApp included</label>
+						<input type="checkbox" name="whatsappF" class="" id="resume2">
+						<label for="resume2"> WhatsApp included</label>
 					</div>
 
 					<br>
 					<hr class="space">
 					<div class="left">
-						<input type="checkbox" class="" id="resume3">
-						<label for="resume3">Email included</label>
+						<input type="checkbox" name="emailF" class="" id="resume3">
+						<label for="resume3"> Email included</label>
 					</div>
 
-					<br>
+					<br><br>
 					<hr class="space">
-					<button type="submit" class="btn btn-success srh btn_grid sub">Go
+					<button type="submit" name="searchFilter" class="btn btn-success srh btn_grid sub">Go
 						<img src="img/go.png" alt="">
 					</button>
 				</form>
@@ -268,13 +342,14 @@ if( $nbdata > 0){
 			<div class="des_art">
 				<h5><?php echo $row['nom_art']." ".$row['prenom_art'] ;?> </h5>
 				<div class="rating left">
-					<span class="fa fa-star "></span>
-					<span class="fa fa-star "></span>
-					<span class="fa fa-star-o "></span>
-					<span class="fa fa-star-o "></span>
-					<span class="fa fa-star-o "></span>
+				<i class="fa fa-star fa-2x" data-index="0"></i>
+        <i class="fa fa-star fa-2x" data-index="1"></i>
+        <i class="fa fa-star fa-2x" data-index="2"></i>
+        <i class="fa fa-star fa-2x" data-index="3"></i>
+        <i class="fa fa-star fa-2x" data-index="4"></i>
 				</div>
-				<span class="fa fa-heart-o right heart"></span>
+				
+				<span class="right"><?php echo round($avg, 2) ?></span>
 			</div>
 			
 		</div>
@@ -325,11 +400,6 @@ if( $nbdata > 0){
 	</div>
 	</div>
 	<?php include "includes/footer.php"; ?>
-
-
-
-
-
 
 
 <script src="js/jquery.js"></script>
