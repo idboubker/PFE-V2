@@ -91,6 +91,14 @@
 
                                 ';
                             }
+							
+								if(isset($_GET['error']) and $_GET['error']=="dash"){
+                                echo '
+                                <div class="btn-danger alert-danger text-center p-1 m-1 form-control" style="" margin="auto !important"><p>you have to login first</p></div>
+
+                                ';
+                            }
+							
 
 
 
