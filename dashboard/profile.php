@@ -1,3 +1,5 @@
+<?php  include('includes/artisan.php')?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,86 +31,7 @@
     <div id="wrapper">
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu">
-            <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
-                <i class="ion-close"></i>
-            </button>
-
-            <!-- LOGO -->
-            <div class="topbar-left">
-                <div class="text-center">
-                    <!--<a href="index.php" class="logo">Admiry</a>-->
-                    <a href="index.php" class="logo"><img src="../img/logo-white.png" height="33" alt="logo"></a>
-                </div>
-            </div>
-
-            <div class="sidebar-inner slimscrollleft">
-
-                <div class="user-details">
-                    <div class="text-center">
-                        <img src="https://portfolium1.cloudimg.io/s/crop/192x192/https://cdn.portfolium.com/ugcs3%2Fv3%2Favatar%2F1bGBKLrCTxurWmsdtpnH_2187603197957344.jpg" alt="" class="rounded-circle">
-                    </div>
-                    <div class="user-info">
-                            <h4 class="font-16 text-white">Mohammed Ali</h4>
-                            <span class="text-white"><i class="fa fa-dot-circle-o text-success"></i> Online</span>
-                    </div>
-                </div>
-
-            <div id="sidebar-menu">
-                <ul>
-                        <li class="menu-title text-white">General</li>
-
-                        <li>
-                            <a href="index.php" class="waves-effect">
-                                <i class="fa fa-tachometer"></i>
-                                <span> Dashboard <span class="badge badge-primary pull-right">3</span></span>
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="profile.php" class="non-active active" style="background-color: red">
-                                <i class="fa fa-user-circle-o"></i>
-                                <span> Profile <span class="badge badge-primary pull-right">4</span></span>
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="add-projet.php" class="non-active">
-                                <i class="fa fa-id-card-o"></i>
-                                <span> Add Projets <span class="badge badge-primary pull-right">10</span></span>
-                            </a>
-                        </li>
-
-                        
-                        
-                            <!-- <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-spray"></i> <span> Icons </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                          
-                               
-                               <ul class="list-unstyled">
-                                <li><a href="icons-material.html">Material Design</a></li>
-                                <li><a href="icons-ion.html">Ion Icons</a></li>
-                                <li><a href="icons-fontawesome.html">Font Awesome</a></li>
-                                <li><a href="icons-themify.html">Themify Icons</a></li>
-                                <li><a href="icons-dripicons.html">Dripicons</a></li>
-                                <li><a href="icons-typicons.html">Typicons Icons</a></li>
-                            </ul>
-                            
-                           
-                        </li>
- -->
-                       
-
-                        
-
-                       
-
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <!-- end sidebarinner -->
-        </div>
+		<?php  $index="";$profile="active";$add=""; include('includes/leftBar.php')?>
         <!-- Left Sidebar End -->
 
         <!-- Start right Content here -->
@@ -118,116 +41,7 @@
             <div class="content">
 
                 <!-- Top Bar Start -->
-                <div class="topbar">
-
-                    <nav class="navbar-custom">
-
-                        <ul class="list-inline float-right mb-0">
-                            <li class="list-inline-item dropdown notification-list">
-                                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <i class="mdi mdi-email-outline noti-icon fa fa-comment-o"></i>
-                                    <span class="badge badge-danger noti-icon-badge">5</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                                    <!-- item-->
-                                    <div class="dropdown-item noti-title">
-                                        <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
-                                    </div>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/user-5.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
-                                        <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
-                                        <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You have 87 unread messages</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
-                                        <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a long established fact that a reader will</small></p>
-                                    </a>
-
-                                    <!-- All-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            View All
-                                        </a>
-
-                                </div>
-                            </li>
-
-                            <li class="list-inline-item dropdown notification-list">
-                                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <i class="mdi mdi-bell-outline noti-icon fa fa-bell-o "></i>
-                                    <span class="badge badge-success noti-icon-badge">3</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                                    <!-- item-->
-                                    <div class="dropdown-item noti-title">
-                                        <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
-                                    </div>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
-                                        <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
-                                        <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning"><i class="mdi mdi-martini"></i></div>
-                                        <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is a long established fact that a reader will</small></p>
-                                    </a>
-
-                                    <!-- All-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            View All
-                                        </a>
-
-                                </div>
-                            </li>
-
-                            <li class="list-inline-item dropdown notification-list">
-                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <img src="assets/images/users/user-5.jpg" alt="user" class="rounded-circle">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted fa fa-user-o"></i> Profile</a>
-                                    <a class="dropdown-item" href="#"><span class="badge badge-success pull-right">5</span><i class="mdi mdi-settings m-r-5 text-muted fa fa-gear"></i> Settings</a>
-                                    
-                                    <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted fa fa-sign-out	
-"></i> Logout</a>
-                                </div>
-                            </li>
-
-                        </ul>
-
-                        <ul class="list-inline menu-left mb-0">
-                            <li class="list-inline-item">
-                                <button type="button" class="button-menu-mobile open-left waves-effect">
-                                    <i class="fa fa-navicon"></i>
-                                </button>
-                            </li>
-                            <li class="hide-phone list-inline-item app-search">
-                                <h3 class="page-title">Dashboard</h3>
-                            </li>
-                        </ul>
-
-                        <div class="clearfix"></div>
-
-                    </nav>
-
-                </div>
+                <?php include('includes/topBar.php')?>
                 <!-- Top Bar End -->
 
                 <div class="page-content-wrapper ">
@@ -238,44 +52,99 @@
                                 <div class="col-12">
                                     <div class="card m-b-30">
                                         <div class="card-body">
-									<form action="" method="">
+                                        
+                                        
+									<form action="includes/profile-mod.php" method="post">
                                             <h4 class="mt-0 header-title">Profile / ( View - Edit )</h4>
-                                            <p class="text-muted m-b-30 font-14">Here are examples of <code
-                                                    class="highlighter-rouge">.form-control</code> applied to each
-                                                textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code
-                                                        class="highlighter-rouge">type</code>.</p>
+                                            <p class="text-muted m-b-30 font-14">vous pouvez modifier vos informations <code
+                                                    class="highlighter-rouge">comme vous voullez.</code> 
+                                                    </p>
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nom </label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" name="" value="Abderahim id Boubker" id="example-text-input">
+                                                    <input class="form-control" type="text" value="<?=$art['nom_art'] ?>" id="example-text-input" name="nom_art" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-sm-2 col-form-label">Prenom</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+                                                    <input class="form-control" type="search" value="<?=$art['prenom_art'] ?>" id="example-search-input" name="prenom_art" required>
                                                 </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-search-input" class="col-sm-2 col-form-label">Genre</label>
+                                                <div class="col-sm-10">
+                                                   <div class="row">
+                                                   	
+                                                  
+                                                    <div class="custom-control col-2" style="margin-left: 15px;margin-right: 5px;">
+                                                           <?php
+														$homme="";$femme="";
+														if($art['sexe_art']=='Homme'){
+															$homme=" checked";
+														}
+														if($art['sexe_art']=='Femme'){
+															$femme=" checked";
+														}
+														
+														?>
+                                                            <input type="radio" class="custom-control-input" id="customCheck1" name="sexe_art" value="Homme" <?=$homme?>>
+                                                            <label class="custom-control-label" for="customCheck1">homme</label>
+                                                        </div>
+                                                        <div class="custom-control col-2">
+                                                            <input type="radio" class="custom-control-input" value="Femme" id="customCheck2" name="sexe_art" <?=$femme?>>
+                                                            <label class="custom-control-label" for="customCheck2">femme</label>
+                                                        </div>
+                                                         </div>
+                                                </div>
+                                                
                                             </div>
                                             <div class="form-group row">
                                                 <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                                                    <input class="form-control" name="email_art" type="email" value="<?=$art['email_art'] ?>" id="example-email-input" required>
+                                                </div>
+                                            </div>
+                                             <div class="form-group row">
+                                                <label for="example-date-input" class="col-sm-2 col-form-label">Date Naissance</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" type="date" name="dateNaissance" value="<?=$art['dateNaissance'] ?>" id="example-date-input" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="example-tel-input" class="col-sm-2 col-form-label">Telephone</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                                                    <input class="form-control" name="tele" type="tel" value="<?=$art['tele'] ?>" id="example-tel-input" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="example-tel-input" class="col-sm-2 col-form-label">Whatsapp</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" name="whatsapp" type="tel" value="<?=$art['whatsapp'] ?>" id="example-tel-input" required>
                                                 </div>
                                             </div>
                                              <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Metier</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control">
-                                                        <option disabled>Select</option>
-                                                        <option>Large select</option>
-                                                        <option>Small select</option>
+                                                    <select class="form-control"  name="metier" required>
+                                                        <option disabled>metier : </option>
+                                                        
+                                                        
+                                                        <?php
+														
+
+														$metiers=mysqli_query($link,"select * from meties");
+														while($met=mysqli_fetch_array($metiers)){
+															if($met['id_met']==$art['metier']){
+																echo "<option value='{$met['id_met']}' selected>".$met['nom_met']." </option>";
+															}else{
+																echo "<option  value='{$met['id_met']}'>".$met['nom_met']." </option>";
+															}
+														}
+
+														
+														?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -283,73 +152,87 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Ville</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control">
-                                                        <option disabled>Select</option>
-                                                        <option>Large select</option>
-                                                        <option>Small select</option>
+                                                    <select class="form-control" name="ville" required>
+                                                        <option disabled>ville : </option>
+                                                         <?php
+														
+
+														$villes=mysqli_query($link,"select * from villes");
+														while($vil=mysqli_fetch_array($villes)){
+															if($vil['id_vil']==$art['ville']){
+																echo "<option value='{$vil['id_vil']}' selected>".$vil['nom_vil']." </option>";
+															}else{
+																echo "<option value='{$vil['id_vil']}'>".$vil['nom_vil']." </option>";
+															}
+														}
+
+														
+														?>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label for="example-tel-input" class="col-sm-2 col-form-label">Quartier</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" name="quartier" type="tel" value="<?=$art['quartier'] ?>" id="example-tel-input" required>
+                                                </div>
+                                            </div>
+                                            
+                                           
+                                            
+                                            <div class="form-group row">
+                                                <label for="example-tel-input" class="col-sm-2 col-form-label">Code Postal</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" name="code_postal" type="tel" value="<?=$art['code_postal'] ?>" id="example-tel-input" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group row">
                                                 <label for="example-url-input" class="col-sm-2 col-form-label">Facebook</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
+                                                    <input class="form-control" name="facebook" type="text" value="<?=$art['facebook'] ?>" id="example-url-input">
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                            <div class="form-group row">
+                                                <label for="example-date-input" class="col-sm-2 col-form-label">Description</label>
+                                                <div class="col-sm-10">
+                                                   <textarea id="description" name="description" required="" class="form-control" required><?=$art['description'] ?></textarea>
+                                                   
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group row ">
+                                                <label for="example-password-input" class="col-sm-2 col-form-label">Mot de passe</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" type="password"  name="pwd_art" id="example-password-input" placeholder="pour modifier vos informations vous devez entrer votre mot de passe" required>
                                                 </div>
                                             </div>
                                             
-                                            <div class="form-group row">
-                                                <label for="example-password-input" class="col-sm-2 col-form-label">Recent Password</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                                            <div class="form-group text-center">
+                                                    <div>
+                                                        <input type="submit" class="btn btn-primary waves-effect waves-light" name="mod-prof" value="modifier">
+                                                            
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="password" value="" id="example-password-input">
-                                                </div>
-                                            </div>
                                             
                                             
-                                            <div class="form-group row">
-                                                <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                                                </div>
-                                            </div>
+                                           
+                                            
                                             
                                             
                                             
                                            
                                            
                                             
-                                            <hr><hr><hr><hr>
                                             
-                                            <div class="form-group row has-success">
-                                                <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">
-                                                    <div class="form-control-feedback">Success! You've done it.</div>
-                                                    <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row has-warning">
-                                                <label for="inputHorizontalWarning" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com">
-                                                    <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-                                                    <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row has-danger">
-                                                <label for="inputHorizontalDnger" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com">
-                                                    <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-                                                    <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                                                </div>
-                                            </div>
                                             </form>
+                                            
+                                            
+                                            
+                                            
+                                            
                                         </div>
                                         
                                     </div>
@@ -388,3 +271,9 @@
 </body>
 
 </html>
+
+
+
+
+
+
