@@ -7,7 +7,8 @@ session_start();
 <li class="nav-item delay-1"><a class="nav-link" href="index.php">HOME</a></li>
         <li class="nav-item delay-2"><a class="nav-link" href="about.php">ABOUT US</a></li>
         <li class="nav-item delay-3"><a class="nav-link" href="result.php">SEARCH</a></li>
-        <li class="nav-item delay-4"><a class="nav-link" href="register.php">SIGN UP</a></li>
+        <li class="nav-item delay-4"><a class="nav-link" href="register_hirafy.php">SIGN UP Hirafy</a></li>
+        <li class="nav-item delay-4"><a class="nav-link" href="register_basic.php">SIGN UP Basic</a></li>
         <li class="nav-item delay-5"><a class="nav-link" href="authentification.php">SIGN IN</a></li>
         
       </ul>
