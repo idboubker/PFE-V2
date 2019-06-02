@@ -109,7 +109,7 @@
                         </div>
 
                         <div class="col-md-12">
-                            <input type="text" name="pass" class="form-control input_select " placeholder="Password">
+                            <input type="password" name="pass" class="form-control input_select " placeholder="Password">
                         </div>
 
                         <div class="col-md-12">
@@ -212,7 +212,7 @@
 
 
                         <div class="col-md-6">
-                            <input type="text" class="form-control input_select " placeholder="Password">
+                            <input type="password" class="form-control input_select " placeholder="Password">
                         </div>
 
                         <div class="col-md-6">
