@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <div class="fixed-top main-menu">
     <div class="flex-center p-5">
       <ul class="nav flex-column">
@@ -9,7 +12,12 @@
         
       </ul>
     </div>
-  </div> <!--main-menu end-->
+  </div> 
+  
+  
+  
+  
+  <!--main-menu end-->
     <header class="container">
     <div class="row">
         <div class="left-head col-1 col-md-4 col-sm-2">
@@ -30,9 +38,16 @@
               </label>
             </span>
 
-            <a href="register.php"><button class="btn btn-success sign">Sign-up</button></a>
-            <a href="authentification.php"><button class="btn btn-success log">Log-in</button></a>
-            
+            <!-- <a href="register.php"><button class="btn btn-success sign"></button></a> -->
+            <?php
+             if(!isset($_SESSION['username'])){
+            echo '<a href="register_basic.php"><button class="btn btn-success sign">Basic</button></a>
+            <a href="register_hirafy.php"><button class="btn btn-success sign">Hirafy</button></a>
+            <a href="authentification.php"><button class="btn btn-success log">Login</button></a>';}
+            else {
+              echo '<a href="includes/logout-inc.php"><button class="btn btn-success log">Logout</button></a>';
+            }
+            ?>
             </span>
             <a class="nav-button"><span id="nav-icon3" class="colps"><span></span><span></span><span></span><span></span></span></a>
         </div>
