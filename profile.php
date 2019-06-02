@@ -706,7 +706,7 @@ if($photo == ""){
 									</p>
 								</div>
 							</div>
-							<a class="close" href="#"><img src="img/our-font-awesome/x.svg" alt=""></a>
+							<a class="close" href="#"><img style="height:35px;width:35px;" src="img/our-font-awesome/x.png" alt=""></a>
 							<br>
 							<div class="content">
 
