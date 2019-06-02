@@ -67,7 +67,25 @@
                        
 
                         <div class="row">
-
+                        
+							<div class=" col-md-12 col-xl-12">
+                                <div class="mini-stat clearfix bg-white row">
+                                    <div class="form-group col-12 offset-1">
+                                            <form action="includes/upload.php" method="post" enctype="multipart/form-data">   
+                                                <label for="example-email-input" class="col-sm-2 col-form-label">Votre image</label>
+                                                <div class="row">
+                                                <div class="col-8">
+                                                    <input class="form-control" name="avatar" type="file" id="example-email-input" required>
+                                                </div>
+                                                <div class="col-2">
+                                                	<input type="submit" name="addavatar" class="btn badge-danger " value="Envoyer">
+                                                </div>
+                                                </div>
+                                              </form>  
+                                            </div>
+                                </div>
+                            </div>
+                            
                             <div class="col-xl-12">
                                 <div class="card card-sec m-b-30">
                                     <div class="card-body">
@@ -98,6 +116,7 @@
                                                             <div class="user-wrapper">
                                                                 <div class="img-user">
                                                                     <img style="width:70px;height:70px;border-radius:5px;" src="../uploads/projet/pro-<?= $pro['id_por']."/img/".$pro['image'] ?>" alt="<?=$pro['nom_projet'] ?>" class="">
+                                                                   
                                                                 </div>
                                                                 <div class="text-user">
                                                                     <h6><?=$pro['nom_projet'] ?></h6>

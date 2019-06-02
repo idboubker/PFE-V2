@@ -86,7 +86,11 @@
                                 <div class="col-12">
                                     <div class="card m-b-30">
                                         <div class="card-body">
-						<form action="" method="post">
+                                        
+                                        
+													<form action="includes/upload.php" method="post" enctype="multipart/form-data" method="post">
+                                           
+                                           
                                             <h4 class="mt-0 header-title">Add New Project</h4>
                                             <p class="text-muted m-b-30 font-14">DropzoneJS is an open source library
                                                 that provides drag’n’drop file uploads with image previews.
@@ -142,16 +146,17 @@
            <div class="container" align="center">  
                 <label id="dropZone" for="fileupload">
 				
-				<input type="file" id="fileupload" name="attachments[]" multiple>
+				<input type="file" id="fileupload" name="myup[]" multiple>
 			</label>
            </div>  
            <br />  
         
   
-                                            </div>
+    
+                                        </div>
 
                                             <div class="text-center m-t-15">
-                                                <input type="button" class="btn btn-primary waves-effect waves-light" value="Publish">
+                                                <input type="submit" name="add-pro" class="btn btn-primary waves-effect waves-light" value="Publish">
                                             </div>
 							</form>
                                         </div>
@@ -182,41 +187,6 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
         
-         <script>  
- $(document).ready(function(){  
-      $('.file_drag_area').on('dragover', function(){  
-           $(this).addClass('file_drag_over');  
-           return false;  
-      });  
-      $('.file_drag_area').on('dragleave', function(){  
-           $(this).removeClass('file_drag_over');  
-           return false;  
-      });  
-      $('.file_drag_area').on('drop', function(e){  
-           e.preventDefault();  
-           $(this).removeClass('file_drag_over');  
-           var formData = new FormData();  
-           var files_list = e.originalEvent.dataTransfer.files;  
-           //console.log(files_list);  
-           for(var i=0; i<files_list.length; i++)  
-           {  
-                formData.append('file[]', files_list[i]);  
-           }  
-           //console.log(formData);  
-           $.ajax({  
-                url:"upload.php",  
-                method:"POST",  
-                data:formData,  
-                contentType:false,  
-                cache: false,  
-                processData: false,  
-                success:function(data){  
-                     $('#uploaded_file').html(data);  
-                }  
-           })  
-      });  
- });  
- </script>
-
+     
     </body>
 </html>
