@@ -1,6 +1,16 @@
 <?php
 
-$user = 3;
+session_start();
+
+
+if(isset($_GET['ida'])){
+    $user = $_GET['ida'];
+}
+else {
+    header("location: result.php?fp=1&ville=".$_SESSION['ville']."&metier=".$_SESSION['metier']);
+    exit;
+}
+
 $sql =   "select * from artisan a, artisan_details d where a.id_art = $user and a.id_art = d.id_art";
 $result = mysqli_query($link,$sql);
 $info = mysqli_fetch_assoc($result);

@@ -34,7 +34,7 @@ mysqli_set_charset($link,"utf8");
              <div class="sh text-center">
             <div class="search">
             <div class="lg-index"><img src="img/lg-index.svg" alt=""></div>
-                <form action="result.php" method="POST" >
+                <form action="result.php" method="GET" >
                 <div class="row">
                 <div class="col-md-4 col-sm-6 p-2">
                     <select name="ville" id="sel-vil" class="form-control chev">

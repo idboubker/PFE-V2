@@ -1,5 +1,4 @@
 <?php
-session_start();
 ?>
 <div class="fixed-top main-menu">
     <div class="flex-center p-5">

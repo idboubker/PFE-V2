@@ -1,14 +1,13 @@
 <?php 
 
-
 include "connexion.php";
 mysqli_set_charset($link, "utf8");
-
+session_start();
 
 $nbdata=0;
-if (isset($_POST['search'])) {
-			$ville = $_POST['ville'];
-			$metier = $_POST['metier'];
+if (isset($_GET['search']) || isset($_GET['fp'])) {
+			$ville = $_GET['ville'];
+			$metier = $_GET['metier'];
 			$sql=" select * from artisan a, artisan_details d where a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art";
 			$rsl = mysqli_query($link,$sql);
 			$nbdata = mysqli_num_rows($rsl);
@@ -19,35 +18,36 @@ if (isset($_POST['search'])) {
 }
 
 
-if (isset($_POST['searchFilter'])) {
+
+if (isset($_GET['searchFilter'])) {
 			$ville =	$_SESSION['ville'];
 			$metier = $_SESSION['metier'];
 			
 			
 
 			// d.typeTravail
-			$typeTrav = $_POST['typeTrav'];
+			$typeTrav = $_GET['typeTrav'];
 			if($typeTrav == ''){
 				$typeTrav = '%';
 			}
 
 			// order by  d.dateInscription	
-			$sortby = $_POST['sortBy'];
+			$sortby = $_GET['sortBy'];
 
 			//Email Filter
-			if (isset($_POST['emailF'])) { $EmInc = '%@%'; }
+			if (isset($_GET['emailF'])) { $EmInc = '%@%'; }
 			else { $EmInc = '%'; }
 
 			//Whatsapp Filter  d.whatsapp
-			if (isset($_POST['whatsappF'])) { $whtsinc = '%0%'; }
+			if (isset($_GET['whatsappF'])) { $whtsinc = '%0%'; }
 			else { $whtsinc = '%'; }
 
 			// Discription Filter
-			if (isset($_POST['descrF'])) { $resumInc = '%a%'; } 
+			if (isset($_GET['descrF'])) { $resumInc = '%a%'; } 
 			else { $resumInc = '%';	}
 
 			// Email or Last Name Filter on First Name 
-			$filter2 = $_POST['searchBy'];
+			$filter2 = $_GET['searchBy'];
 			if($filter2==""){$filter2='%';}
 
 
@@ -65,9 +65,9 @@ if (isset($_POST['searchFilter'])) {
 
 $conn = mysqli_connect('localhost', 'root', '', 'mou9ef');
 
-if (isset($_POST['save'])) {
-    $uID = $conn->real_escape_string($_POST['uID']);
-    $ratedIndex = $conn->real_escape_string($_POST['note_eva']);
+if (isset($_GET['save'])) {
+    $uID = $conn->real_escape_string($_GET['uID']);
+    $ratedIndex = $conn->real_escape_string($_GET['note_eva']);
     $ratedIndex++;
 
     if (!$uID) {
@@ -128,7 +128,7 @@ $avg = $total / $numR;
 			</div>
 
 			<div class="">
-				<form action="result.php" method="POST">
+				<form action="result.php" method="GET">
 
 
 					<div class="row text-center">
@@ -193,7 +193,7 @@ $avg = $total / $numR;
 				<!-- <button class="btn btn_grid" type="submit">GRID</button><br>
 				<button class="btn btn-info btn_map" type="submit">MAP</button> -->
 
-				<form action="result.php" method="POST">
+				<form action="result.php" method="GET">
 
 					<select name="typeTrav" id="" class="form-control input_select chev">
 					<option value="" >Individual or Company</option>
@@ -283,9 +283,7 @@ if( $nbdata > 0){
 		$ida=$row['id_art'];
 		$image = $row['photo'];
 		if($image == ""){$image = "img/464220-PFPXU4-113.jpg";}
-		
-		
-		
+
    ?>
   
 		<div class="offset-sm-0 col-6 col-lg-4 col-md-6 col-sm-12 p-3 p-md-2 p-sm-1">

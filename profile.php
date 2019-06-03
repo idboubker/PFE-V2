@@ -1,5 +1,7 @@
 <?php
 include "connexion.php";
+
+
 mysqli_set_charset($link,"utf8");
 include "includes/profile.inc.php";
 
@@ -630,7 +632,7 @@ if($photo == ""){
 						<!--         similar             -->
 							<?php
 							while($similar = mysqli_fetch_assoc($rslt)){
-								 echo '<div class="sim_art">
+								 echo '<a href="profile.php?ida='.$similar["id_art"].'" class="clickable"><div class="sim_art">
 
 								<div class="sim_img">
 
@@ -662,7 +664,7 @@ if($photo == ""){
 
 								</div>
 
-							</div>';
+							</div></a>';
 							} 
 							?>
 							<!--         /similar             -->
