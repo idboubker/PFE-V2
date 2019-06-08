@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<<<<<<< HEAD
+
 
 <body>
 	<!--main-menu end-->

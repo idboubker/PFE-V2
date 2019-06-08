@@ -40,7 +40,8 @@
         }
 
         $_SESSION['username'] = $user['email_art'];
-        header("location: ../index.php?login=success");
+		$_SESSION['id_art'] = $user['id_art'];
+        header("location: ../dashboard/index.php");
     } else if (isset($_POST['account_type']) && $_POST['account_type'] == 'basic') {
         $stmt = mysqli_prepare($link, 'SELECT * FROM utilisateurs WHERE email_uti = ?');
         mysqli_stmt_bind_param($stmt, 's', $_POST['email']);
@@ -59,5 +60,6 @@
         }
 
         $_SESSION['username'] = $user['email_uti'];
+		$_SESSION['id_uti']= $user['id_uti'];
         header("location: ../index.php?login=success");
     }

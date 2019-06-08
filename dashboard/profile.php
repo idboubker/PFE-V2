@@ -81,19 +81,19 @@
                                                     <div class="custom-control col-2" style="margin-left: 15px;margin-right: 5px;">
                                                            <?php
 														$homme="";$femme="";
-														if($art['sexe_art']=='Homme'){
+														if($art['sexe_art']=='Male'){
 															$homme=" checked";
 														}
-														if($art['sexe_art']=='Femme'){
+														if($art['sexe_art']=='Female'){
 															$femme=" checked";
 														}
 														
 														?>
-                                                            <input type="radio" class="custom-control-input" id="customCheck1" name="sexe_art" value="Homme" <?=$homme?>>
+                                                            <input type="radio" class="custom-control-input" id="customCheck1" name="sexe_art" value="Male" <?=$homme?>>
                                                             <label class="custom-control-label" for="customCheck1">homme</label>
                                                         </div>
                                                         <div class="custom-control col-2">
-                                                            <input type="radio" class="custom-control-input" value="Femme" id="customCheck2" name="sexe_art" <?=$femme?>>
+                                                            <input type="radio" class="custom-control-input" value="Female" id="customCheck2" name="sexe_art" <?=$femme?>>
                                                             <label class="custom-control-label" for="customCheck2">femme</label>
                                                         </div>
                                                          </div>

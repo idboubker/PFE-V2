@@ -1,4 +1,5 @@
 <?php  include('includes/artisan.php')?>
+<?php  include('includes/edit-pro.php')?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,8 +93,7 @@
                                            
                                            
                                             <h4 class="mt-0 header-title">Add New Project</h4>
-                                            <p class="text-muted m-b-30 font-14">DropzoneJS is an open source library
-                                                that provides drag’n’drop file uploads with image previews.
+                                            <p class="text-muted m-b-30 font-14"> 
                                             </p>
 
                                            
@@ -102,32 +102,32 @@
                           						<div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">le nom de projet</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="text" name="" value="" id="example-text-input" required>
+                                                    <input class="form-control" type="text" name="nom_projet" value="<?= $nom_projet?>" placeholder="entrer le nom de votre projet" id="example-text-input" >
                                                 </div>
                                             </div> 
-                                            
+                                            <!--
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Ville</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-control">
+                                                    <select name="" class="form-control">
                                                         <option disabled>Select</option>
-                                                        <option>Large select</option>
-                                                        <option>Small select</option>
+                                                        <option value="">Large select</option>
+                                                        <option value="">Small select</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            
+                                            -->
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                                    <input class="form-control" name="date_projet" type="date" value="<?= $date_projet ?>" id="example-date-input">
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group row">
                                                 <label for="Description" class="col-sm-2 col-form-label">Description</label>
                                                 <div class="col-sm-8">
-                                                    <textarea class="form-control" type="text" name="" value="" id="Description"></textarea>
+                                                    <textarea class="form-control" type="text" name="description_projet" value="<?= $desciption_projet ?>" id="Description"></textarea>
                                                 </div>
                                             </div> 
                           						

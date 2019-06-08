@@ -5,9 +5,7 @@ if(empty($id_art)){
 	header("location: ../authentification.php?error=dash");
 }
 $id_art=$_SESSION['id_art'];
-require("../connexion.php");
-
-mysqli_set_charset($link,"utf8");
+require("../../connexion.php");
 
 $artisan=mysqli_query($link,"select * from 
 artisan a,
@@ -22,9 +20,14 @@ a.id_art='$id_art'")
 or header("location: ../error/404.html");
 
 $art=mysqli_fetch_array($artisan);
-
-
+echo $art['id_art'];
+mysqli_set_charset($link,"utf8");
 
 ?>
 
 
+
+<script>
+
+
+</script>
