@@ -11,11 +11,6 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> d01218760e066a12628d7bdf06953b647df850b5
 <body>
 	<!--main-menu end-->
 	<?php include "includes/header.php" ?>
