@@ -156,7 +156,7 @@
 
 										$result = mysqli_query($link, $sql);
 										while ($row = mysqli_fetch_assoc($result)) {
-											echo '<option value="">' . $row['nom_vil'] . '</option>';
+											echo '<option value="">' . $row['id_vil'] . '</option>';
 										}
 										?>
 									</select>
@@ -170,7 +170,7 @@
 
 										$result = mysqli_query($link, $sql);
 										while ($row = mysqli_fetch_assoc($result)) {
-											echo '<option value="">' . $row['nom_met'] . '</option>';
+											echo '<option value="">' . $row['id_met'] . '</option>';
 										}
 										?>
 									</select>

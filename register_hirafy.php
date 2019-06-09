@@ -143,7 +143,7 @@
 										while ($row = mysqli_fetch_assoc($result)) {
 										
 										
-											echo '<option value="' . $row['nom_vil'] . '">' . $row['nom_vil'] . '</option>';
+											echo '<option value="' . $row['id_vil'] . '">' . $row['nom_vil'] . '</option>';
 										
 									}
 										
@@ -164,7 +164,7 @@
 
 										$result = mysqli_query($link, $sql);
 										while ($row = mysqli_fetch_assoc($result)) {
-											echo '<option value="' . $row['nom_met'] . '">' . $row['nom_met'] . '</option>';
+											echo '<option value="' . $row['id_met'] . '">' . $row['nom_met'] . '</option>';
 										}
 										?>
 									</select>
@@ -250,47 +250,10 @@
 
 	<?php include "includes/footer.php"; ?>
 
-	<div class="container-fluid golden-footer">
-		<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
-
-					<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-
-				</span>
-			</div>
-		</div>
-	</div>
+	
 
 
-	<script>
-		// $(function() {
-		// 	$('#b-account').click(function() {
-		// 		$('#b-account').attr('class', 'col-xs-6 col-sm-6 col-md-6 account active');
-		// 		$('#h-account').attr('class', 'col-xs-6 col-sm-6 col-md-6 account');
-		// 		$('#form-1').attr('style', 'display: block;');
-		// 		$('#form-2').attr('style', 'display: none;');
-		// 	});
-
-		// 	$('#h-account').click(function() {
-		// 		$('#b-account').attr('class', 'col-xs-6 col-sm-6 col-md-6 account');
-		// 		$('#h-account').attr('class', 'col-xs-6 col-sm-6 col-md-6 account active');
-		// 		$('#form-2').attr('style', 'display: block;');
-		// 		$('#form-1').attr('style', 'display: none;');
-		// 	});
-		// });
-
-
-
-		// $(document).ready(function() {
-		// 	$('.nav-button').click(function() {
-		// 		$('body').toggleClass('nav-open');
-		// 	});
-		// });
-	</script>
+	
 </body>
 
 </html>

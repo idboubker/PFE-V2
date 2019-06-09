@@ -54,7 +54,7 @@ if (isset($_POST['basic-reg'])) {
                 exit();
             } else {
 
-                $sql = "INSERT INTO  utilisateurs ( nom_uti ,  email_uti ,  tele ,  pwd_uti ,  type1 ) VALUES ( ?, ?, ?, ?, 1) ";
+                $sql = "INSERT INTO  utilisateurs ( nom_uti ,  email_uti ,  tele ,  pwd_uti ) VALUES ( ?, ?, ?, ?) ";
                 $stmt = mysqli_stmt_init($link);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("location: ../register_basic.php?error=sqlerror");

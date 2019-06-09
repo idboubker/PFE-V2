@@ -44,7 +44,7 @@ mysqli_set_charset($link,"utf8");
                       
                     $result2 = mysqli_query($link,$sql2);
                     while($row2=mysqli_fetch_assoc($result2)){
-                        echo '<option value="'.$row2['nom_vil'].'">'.$row2['nom_vil'].'</option>';
+                        echo '<option value="'.$row2['id_vil'].'">'.$row2['nom_vil'].'</option>';
                     }
                     ?>
                     
@@ -62,7 +62,7 @@ mysqli_set_charset($link,"utf8");
                       
                     $result2 = mysqli_query($link,$sql2);
                     while($row2=mysqli_fetch_assoc($result2)){
-                        echo '<option value="'.$row2['nom_met'].'">'.$row2['nom_met'].'</option>';
+                        echo '<option value="'.$row2['id_met'].'">'.$row2['nom_met'].'</option>';
                     }
                     ?>
                     

@@ -2,18 +2,40 @@
 
 //newsletter
 if(isset($_POST['ok'])){
+
+
     $email= $_POST['email'];
+    $em = "SELECT * FROM newspaper WHERE email LIKE '$email' ";
+    $rslta = mysqli_query($link,$em);
     $sq = "INSERT INTO newspaper (email) VALUES ('$email')";
 
-    if(mysqli_query($link,$sq)){
-        echo '<script> 
-                alert("Merci pour votre inscription à notre boite email");
-              </script>';
+
+    if($email == ""){
+        
     }
-    else {
+    else if(mysqli_num_rows($rslta)>0){
         echo '<script> 
-                alert("Oops! L operation n a pas réussi");
-              </script>'; }
+        alert("Email exist déja!");
+      </script>';
+    }
+    else{
+        if(mysqli_query($link,$sq)){
+            echo '<script> 
+                    alert("Merci pour votre inscription à notre boite email");
+                  </script>';
+        }
+        else {
+            echo '<script> 
+                    alert("Oops! L operation n a pas réussi");
+                  </script>'; }
+    }
+
+
+
+
+    
+
+    
 }
 ?>
 

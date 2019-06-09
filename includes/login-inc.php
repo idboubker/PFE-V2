@@ -47,17 +47,16 @@
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $user = mysqli_fetch_assoc($result);
+       // $hashedPwdA = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 
         if (!$user) {
             header('Location: ../authentification.php?error=user not found');
             exit;
         }
-
         if (!password_verify($_POST['pwd'], $user['pwd_uti'])) {
             header('Location: ../authentification.php?error=password incorrect');
             exit;
         }
-
         $_SESSION['username'] = $user['email_uti'];
         header("location: ../index.php?login=success");
     }

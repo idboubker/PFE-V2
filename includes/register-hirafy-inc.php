@@ -76,14 +76,14 @@ if (isset($_POST['hirafy-reg'])) {
                 exit();
             } else {
 
-                $sql = "INSERT INTO  artisan (nom_art, prenom_art, sexe_art, dateNaissance, ville, metier, email_art, tele, pwd_art, dateInscription,type1) VALUES ( ?, ?, ?,?,?, ?,?, ?,?, ?,?) ";
+                $sql = "INSERT INTO  artisan (nom_art, prenom_art, sexe_art, dateNaissance, ville, metier, email_art, tele, pwd_art, dateInscription) VALUES ( ?, ?, ?,?,?, ?,?, ?,?, ?) ";
                 $stmt = mysqli_stmt_init($link);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("location: ../register_hirafy.php?error=sqlerror");
                     exit();
                 } else {
                     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sssssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd, $dateInscription, $type);
+                    mysqli_stmt_bind_param($stmt, "ssssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd, $dateInscription);
                     mysqli_stmt_execute($stmt);
                     header("location: ../register_hirafy.php?register=success");
                     exit();

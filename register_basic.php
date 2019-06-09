@@ -141,20 +141,6 @@
 
 	<?php include "includes/footer.php"; ?>
 
-	<div class="container-fluid golden-footer">
-		<div class="container ">
-			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
-				<span class="text-right col-6">
-
-					<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-					<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
-
-				</span>
-			</div>
-		</div>
-	</div>
 
 
 </body>
