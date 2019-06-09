@@ -1,8 +1,5 @@
 <?php
-
 session_start();
-
-
 if(isset($_GET['ida'])){
     $user = $_GET['ida'];
 }
@@ -11,7 +8,7 @@ else {
     exit;
 }
 
-$sql =   "select * from artisan a, artisan_details d where a.id_art = $user and a.id_art = d.id_art";
+$sql =   "select * from artisan a, artisan_details d, meties m, villes v where a.id_art = $user and a.id_art = d.id_art and a.metier = m.id_met and a.ville = v.id_vil";
 $result = mysqli_query($link,$sql);
 $info = mysqli_fetch_assoc($result);
 
@@ -19,7 +16,7 @@ $info = mysqli_fetch_assoc($result);
 $simVil = $info['ville'];
 $simMet = $info['metier'];
 
-$reqt = "select * from artisan r, artisan_details t where r.id_art != $user and r.ville = '$simVil' and r.metier = '$simMet' and r.id_art = t.id_art ";
+$reqt = "select * from artisan r, artisan_details t, meties m, villes v where r.id_art != $user and r.ville = '$simVil' and r.metier = '$simMet' and r.id_art = t.id_art and r.metier = m.id_met and r.ville = v.id_vil ";
 $rslt = mysqli_query($link,$reqt);
 							
 
@@ -46,3 +43,5 @@ $rsl1 = mysqli_query($link,$req1);
 $port1 = mysqli_fetch_assoc($rsl1);
 
 
+$pics = "select * from portfolio_pics f, portfolio p where p.id_art = $user and f.id_por = p.id_por";
+$picc = mysqli_query($link,$pics);

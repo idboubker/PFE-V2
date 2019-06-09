@@ -396,7 +396,7 @@ tr:nth-child(5) .inside-holder {
 	height: 173px;
 	width: 100%;
 	background-color: green;
-	background: url("../img/project.jpg") no-repeat;
+	
 	background-size: cover;
 }
 

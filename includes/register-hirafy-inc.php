@@ -3,6 +3,22 @@
 if (isset($_POST['hirafy-reg'])) {
 
     require '../connexion.php';
+
+
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $sexe = isset($_POST['gender']) ? $_POST['gender'] : $_POST['gender'] = '';
+    $dateNaissance = $_POST['dateNaissance'];
+    $ville = $_POST['ville'];
+    $metier = $_POST['metier'];
+    $email = $_POST['email'];
+    $tele = $_POST['tele'];
+    $pwd = $_POST['pwd'];
+    $pwdrep = $_POST['pwdrep'];
+    date_default_timezone_set(date_default_timezone_get());
+    //$dateInscription = date('Y-m-d', time());
+
+
     $err = "";
     if (empty($_POST['nom'])  || !isset($_POST['nom'])) {
         $err = "errn=req&";
@@ -28,6 +44,12 @@ if (isset($_POST['hirafy-reg'])) {
     if (empty($_POST['metier']) || !isset($_POST['metier']) || $_POST['metier'] = 'metier') {
         $err = $err . "errmet=req";
     }
+    // if (empty($pwd) || empty($pwdrep)) {
+    //     header("location: ../register_basic.php?error=emptyfieldpwd&login=" . $login . "&email=" . $email . "&tele=" . $tele);
+    // }
+
+
+    
     $i = 0;
     foreach ($_POST as $p) {
         if (empty($p)) {
@@ -39,19 +61,7 @@ if (isset($_POST['hirafy-reg'])) {
         exit();
     }
 
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $sexe = isset($_POST['gender']) ? $_POST['gender'] : $_POST['gender'] = '';
-    $dateNaissance = $_POST['dateNaissance'];
-    $ville = $_POST['ville'];
-    $metier = $_POST['metier'];
-    $email = $_POST['email'];
-    $tele = $_POST['tele'];
-    $pwd = $_POST['pwd'];
-    $pwdrep = $_POST['pwdrep'];
-    date_default_timezone_set(date_default_timezone_get());
-    $dateInscription = date('Y-m-d', time());
-    $type = 2;
+
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("location: ../register_hirafy.php?error=invalidmail&nom=" . $nom . "&prenom=" . $prenom . "&dateNaissance=" . $dateNaissance . "&ville=" . $ville . "&tele=" . $tele);
@@ -76,16 +86,16 @@ if (isset($_POST['hirafy-reg'])) {
                 exit();
             } else {
 
-                $sql = "INSERT INTO  artisan (nom_art, prenom_art, sexe_art, dateNaissance, ville, metier, email_art, tele, pwd_art, dateInscription) VALUES ( ?, ?, ?,?,?, ?,?, ?,?, ?) ";
+                $sqlt = "INSERT INTO  artisan (nom_art, prenom_art, sexe_art, dateNaissance, ville, metier, email_art, tele, pwd_art) VALUES ( ?, ?, ?,?,?, ?,?, ?,?) ";
                 $stmt = mysqli_stmt_init($link);
-                if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("location: ../register_hirafy.php?error=sqlerror");
+                if (mysqli_stmt_prepare($stmt, $sqlt)) {
+                    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+                    mysqli_stmt_bind_param($stmt, "sssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd);
+                    mysqli_stmt_execute($stmt);
+                    header("location: ../register_hirafy.php?register=success$nom,$prenom,$sexe,$dateNaissance,$ville,$metier,$email,$tele,$hashedPwd");
                     exit();
                 } else {
-                    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "ssssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd, $dateInscription);
-                    mysqli_stmt_execute($stmt);
-                    header("location: ../register_hirafy.php?register=success");
+                    header("location: ../register_hirafy.php?error=sqlerror");
                     exit();
                 }
             }

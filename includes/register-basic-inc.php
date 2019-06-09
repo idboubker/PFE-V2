@@ -9,7 +9,7 @@ if (isset($_POST['basic-reg'])) {
     $tele = $_POST['tele'];
     $pwd = $_POST['pwd'];
     $pwdrep = $_POST['pwdrep'];
-    $type = 1;
+    
 
     if (empty($login) || empty($email) || empty($tele) || empty($pwd) || empty($pwdrep)) {
         if (empty($login) && empty($email) && empty($tele) && empty($pwd)  && empty($pwdrep)) {
@@ -26,14 +26,14 @@ if (isset($_POST['basic-reg'])) {
             header("location: ../register_basic.php?error=emptyfieldpwd&login=" . $login . "&email=" . $email . "&tele=" . $tele);
         }
         exit();
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    }
+        
+        
+        else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("location: ../register_basic.php?error=invalidmail&login=" . $login . "&email=" . $email . "&tele=" . $tele);
-        exit();
+        exit(); //heeeeeere
     } 
-    // else if (!preg_match($pattern, $login)) {
-    //     // header("location: ../register_basic.php?error=invalidname&email=" . $email . "&tele=" . $tele);
-    //     // exit();
-    // } 
+
     else if ($pwd !== $pwdrep) {
         header("location: ../register_basic.php?error=pwdmatch&login=" . $login . "&email=" . $email . "&tele=" . $tele);
         exit();

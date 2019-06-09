@@ -138,6 +138,12 @@ $avg = $total / $numR;
 								<?php
 								$sql2 = "select * from villes";
 								$result2 = mysqli_query($link, $sql2);
+								
+								if($_GET['ville'] != ""){
+								$selectedVille = mysqli_query($link, "select * from villes where id_vil = {$_GET['ville']}");
+								$villeselected = mysqli_fetch_assoc($selectedVille);
+								echo '<option value="'.$villeselected['id_vil'].'">'.$villeselected['nom_vil'].'</option>';
+								}
 								while ($row2 = mysqli_fetch_assoc($result2)) {
 									echo '<option value="'.$row2['id_vil'].'">'.$row2['nom_vil'].'</option>';
 								}
@@ -149,8 +155,12 @@ $avg = $total / $numR;
 							<select name="metier" id="sel-job" class="form-control chev">
 								<?php
 								$sql2 = "select * from meties";
-
 								$result2 = mysqli_query($link, $sql2);
+								if($_GET['metier'] != ""){
+								$selectedMet = mysqli_query($link, "select * from meties where id_met = {$_GET['metier']}");
+								$Metselected = mysqli_fetch_assoc($selectedMet);
+								echo '<option value="'.$Metselected['id_met'].'">'.$Metselected['nom_met'].'</option>';
+							}
 								while ($row2 = mysqli_fetch_assoc($result2)) {
 									echo '<option value="' . $row2['id_met'] . '">' . $row2['nom_met'] . '</option>';
 								}

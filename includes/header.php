@@ -31,8 +31,8 @@
             <label for="lang" class=""><img src="img/lang.png" alt="">
                 <select id="lang" class="form-control">
                        <option value="" selected class="hidden-xm" disabled>Language</option>
-                    <option>Arabic</option>
-                    <option>Frensh</option>
+                   <!-- <option>Arabic</option>
+                    <option>Frensh</option> -->
                     <option>English</option>
                   </select>
               </label>
