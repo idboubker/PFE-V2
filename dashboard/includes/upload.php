@@ -90,7 +90,66 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 			
 			header("location: ../index.php");
 					
+				}else{
+			if(isset($_POST['mod-pro'])){
+				if(isset($_POST['del-img-pri'])){
+					$primary_img = $_POST['del-img-pri'];
+					$libelle_pri = $_POST['libelle-img-pri'];
+				}else{
+					$primary_img=false;
 				}
+			//$del_img[] = $_POST['del-img'];
+				//echo $primary_img;
+			$id_por=$_POST['id_por'];
+			$img_nbr=$_POST['img_nbr'];	
+			$nom_projet=$_POST['nom_projet'];
+			$date_projet=$_POST['date_projet'];
+			$description_projet=$_POST['description_projet'];
+			
+				
+				
+				
+				/*
+				$projet=mysqli_query($link,"select * from portfolio where id_art='$id_art'");
+				$pro=mysqli_fetch_array($projet);
+			*/
+				$path_to_directory = "../../uploads/projet/pro-".$id_por;
+				
+				$lib_dp=$_POST['libelle-img'];
+				$id_dp=$_POST['del-img'];
+				$i_pd="";
+				$l_pd="";
+				echo $img_nbr;
+			for($k=0;$k<$img_nbr;$k++){
+				if($primary_img!=false){
+					echo " one ";
+				}else{
+					
+					$i_pd=@$id_dp[$k];
+					$l_pd=@$lib_dp[$k];
+					
+					$path_to_directory.='/img/'.$l_pd;
+					if(file_exists($path_to_directory)){
+					unlink($path_to_directory);
+					}
+					
+					
+					var_dump($lib_dp);
+					mysqli_query($link,"DELETE FROM `portfolio_pics` WHERE `portfolio_pics`.`id`=$i_pd")or die("error deleting images");
+				
+				}
+				
+			}
+			
+			
+			/*
+			$addpro=mysqli_query($link,
+								 "insert into `portfolio` (`id_por`,`image`,`description_projet`,`id_art`,`nom_projet`,`date_projet`) VALUES 
+								 (null,'$img_pro','$description_projet','$id_art','$nom_projet','$date_projet')") or die("error upadtae 2");	
+			*/	
+			
+		}
+		}
 }//else
 
 

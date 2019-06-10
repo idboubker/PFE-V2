@@ -135,7 +135,7 @@
                                                         <a href="index.php?id_por_del=<?=$pro['id_por'] ?>"><span class="badge badge-danger del">&lt;--delete--&gt;</span></a>
                                                         <br>
                                                       
-                                                        <a  href="includes/edit-pro.php?id_por=<?=$pro['id_por']?>" id="confirmation"><span class="badge badge-warning edi">&lt;--&nbsp;&nbsp;edit&nbsp;&nbsp;--&gt;</span>
+                                                        <a  href="add-projet.php?id_por=<?=$pro['id_por']?>&&id_art=<?=$id_art?>" id="confirmation"><span class="badge badge-warning edi">&lt;--&nbsp;&nbsp;edit&nbsp;&nbsp;--&gt;</span>
                                                         </a>
                                                         <br>
                                                         <a href="includes/view-pro.php?id_por=<?=$pro['id_por']?>"><span class="badge badge-info edi">&lt;--&nbsp;view&nbsp;--&gt;</span>

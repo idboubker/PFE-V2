@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Agency - Responsive Flat Admin Dashboard</title>
+    <title>Mou9ef - Responsive Flat Admin Dashboard</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -53,11 +53,11 @@
                                     <div class="card m-b-30">
                                         <div class="card-body">
                                         
-                                        
+                                       
 									<form action="includes/profile-mod.php" method="post">
                                             <h4 class="mt-0 header-title">Profile / ( View - Edit )</h4>
-                                            <p class="text-muted m-b-30 font-14">vous pouvez modifier vos informations <code
-                                                    class="highlighter-rouge">comme vous voullez.</code> 
+                                            <p class="text-muted m-b-30 font-14"><code
+                                                    class="highlighter-rouge"></code> 
                                                     </p>
 
                                             <div class="form-group row">

@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Agency - Responsive Flat Admin Dashboard</title>
+        <title>Mou9ef - Responsive Flat Admin Dashboard</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,6 +52,28 @@
             #error {
                 color: red;
             }
+			   
+			   
+			   .sel_img{
+				   width: 100%;
+				   height: 220px; 
+				   overflow: hidden; 
+				   
+				   background-position: center; /* Center the image */
+ 					background-repeat: no-repeat; /* Do not repeat the image */
+  					background-size: cover; 
+				   padding: 2px;
+			   }
+			   .sel_del input{
+				   position: absolute ;
+				   top: 5px;
+				   left: 5px;
+				   transform: scale(1.5);
+			   }
+			   .selected_del{
+				  
+				   border: 2px solid black;
+			   }
            </style>  
 
     </head>
@@ -126,12 +148,85 @@
                                             
                                             <div class="form-group row">
                                                 <label for="Description" class="col-sm-2 col-form-label">Description</label>
-                                                <div class="col-sm-8">
-                                                    <textarea class="form-control" type="text" name="description_projet" value="<?= $desciption_projet ?>" id="Description"></textarea>
+                                                <div class="col-sm-8 ">
+                                                    <textarea class="form-control" style="align-content:left ;" type="text" name="description_projet" id="Description"><?= $description_projet ?></textarea>
                                                 </div>
                                             </div> 
-                          						
+                                             
+                          						 
                           				              
+        <?php
+													if($answer==true){
+															
+														$i=0;
+														echo '
+														
+														<div class="form-group row text-center">
+                                                <label class="col-sm-12 col-form-label">Selection une ou plusieurs images pour la/les supprimees</label>
+                                               
+                                            </div> 
+														
+														<div class="form-group ">
+                                           	<div class="row">
+														';
+													while($imgs=mysqli_fetch_array($images)){
+														$i++;
+													
+														
+												
+														if( $imgs['img'] == $pro['image'] ){
+															
+														
+														?>                                  
+                                          
+                                          
+                                           	
+                                           	<div class="col-4 sel_del p-0">
+                                           		<label for="idpp-<?=$imgs['id']?>" class="sld">
+                                           			 <img src="../uploads/projet/pro-<?=$id_por?>/img/<?=$imgs['img'] ?>" class="sel_img" alt="">
+                                           		</label>
+                                           		<input type="checkbox" id="idpp-<?=$imgs['id'] ?>" name="del-img-pri" value="<?=$imgs['id']?>">
+                                           		<input type="hidden" name="libelle-img-pri" value="<?=$imgs['img']?>">
+                                           	</div>
+                                           	
+                                           
+                                           	
+                                           	
+											  
+                                          
+                               <?php
+															}else{
+															
+															?>
+															
+															
+                                           	<div class="col-4 sel_del p-0">
+                                           		<label for="idpp-<?=$imgs['id']?>" class="sld">
+                                           			 <img src="../uploads/projet/pro-<?=$id_por?>/img/<?=$imgs['img'] ?>" class="sel_img" alt="">
+                                           		</label>
+                                           		<input type="checkbox" id="idpp-<?=$imgs['id'] ?>" value="<?=$imgs['id']?>" name="del-img[]">
+                                           		<input type="hidden" name="libelle-img[]" value="<?=$imgs['img']?>">
+                                           	</div>
+															
+															<?php
+															
+															
+														}
+															
+															
+															
+															
+														}//while
+														
+													echo "</div></div><input type='hidden' name='img_nbr' value='$i'><input type='hidden' name='id_por' value='$id_por'>";	
+														
+															}//if
+														
+														?>            
+                                           
+                                           
+                                              
+                                           
                                            
                                            
                                             <div class="m-b-30">
@@ -142,6 +237,7 @@
   
 
            <br />   
+           
            <h1 align="center">Drag & Drop Images...</h1>         
            <div class="container" align="center">  
                 <label id="dropZone" for="fileupload">
@@ -149,15 +245,26 @@
 				<input type="file" id="fileupload" name="myup[]" multiple>
 			</label>
            </div>  
+           
+           
            <br />  
+        
+        
         
   
     
                                         </div>
-
+											
+                                           <?php  if($answer==true){ ?>
+                                            <div class="text-center m-t-15">
+                                                <input type="submit" name="mod-pro" class="btn btn-warning waves-effect waves-light" value="Publish">
+                                            </div>
+                                            <?php }else{ ?>
                                             <div class="text-center m-t-15">
                                                 <input type="submit" name="add-pro" class="btn btn-primary waves-effect waves-light" value="Publish">
                                             </div>
+                                            <?php }?>
+                                            
 							</form>
                                         </div>
                                     </div>
@@ -187,6 +294,15 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
         
-     
+     <script>
+		
+		 
+		  $( ".sel_img" ).on({
+            click: function() {
+                $( this ).toggleClass( "selected_del" );
+            }
+        });
+		 
+		</script>
     </body>
 </html>
