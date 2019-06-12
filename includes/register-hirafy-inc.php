@@ -92,7 +92,7 @@ if (isset($_POST['hirafy-reg'])) {
                     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
                     mysqli_stmt_bind_param($stmt, "sssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd);
                     mysqli_stmt_execute($stmt);
-                    header("location: ../register_hirafy.php?register=success$nom,$prenom,$sexe,$dateNaissance,$ville,$metier,$email,$tele,$hashedPwd");
+                    header("location: ../register_hirafy.php?register=success");
                     exit();
                 } else {
                     header("location: ../register_hirafy.php?error=sqlerror");

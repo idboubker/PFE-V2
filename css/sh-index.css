@@ -12,9 +12,9 @@
 	width: 100%;
 	
 }
-.in-search{
+/* .in-search{
 	
-}
+} */
 .lg-index{
 	margin-bottom: 20px;
 }
@@ -26,15 +26,16 @@
 }
 .sh{
 	margin: auto;
-	margin-top: 20%;
+	margin-top: 10%;
 	margin-bottom: 20%;
 	padding: 60px;
 	padding-top: 100px;
 	padding-bottom: 100px;
-	background-color: white;
+	/* background-color: white; */
+	background-color: rgba(255, 255, 255, 0.6); 
 	border-radius: 4px;
 	width: 80%;
-	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5), 0 0 2em rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.4), 0 0 1em rgba(0, 0, 0, 0.4);
 	
 }
 
@@ -88,9 +89,9 @@
 .feature-title{
 	margin-bottom: 30px !important;
 }
-.wum-up{
+/* .wum-up{
 	
-}
+} */
 
 
 
@@ -156,9 +157,9 @@ a{
 	height: 75px;
 	
 }
-.social-img .tw i{
+/* .social-img .tw i{
 	
-}
+} */
 .social-btn button{
 	margin-top: 10px;
 	background:  url("../img/click.svg") no-repeat 97% 40% ;
@@ -201,7 +202,7 @@ a{
 	width: 50%;
 	height: 50px;
 	line-height: 50px;
-	color: ;
+	/* color: ; */
 	font-size: 20px;
 	
 	
