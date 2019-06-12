@@ -153,12 +153,15 @@
                                                 </div>
                                             </div> 
                                              
+                                             
+                          						 
+                          				      
                           						 
                           				              
         <?php
 													if($answer==true){
 															
-														$i=0;
+														$i=1;
 														echo '
 														
 														<div class="form-group row text-center">
@@ -170,7 +173,7 @@
                                            	<div class="row">
 														';
 													while($imgs=mysqli_fetch_array($images)){
-														$i++;
+														
 													
 														
 												
@@ -185,8 +188,8 @@
                                            		<label for="idpp-<?=$imgs['id']?>" class="sld">
                                            			 <img src="../uploads/projet/pro-<?=$id_por?>/img/<?=$imgs['img'] ?>" class="sel_img" alt="">
                                            		</label>
-                                           		<input type="checkbox" id="idpp-<?=$imgs['id'] ?>" name="del-img-pri" value="<?=$imgs['id']?>">
-                                           		<input type="hidden" name="libelle-img-pri" value="<?=$imgs['img']?>">
+                                           		<input type="checkbox" id="idpp-<?=$imgs['id'] ?>" name="del-img[ip]" value="<?=$imgs['id']?>">
+                                           		
                                            	</div>
                                            	
                                            
@@ -205,7 +208,7 @@
                                            			 <img src="../uploads/projet/pro-<?=$id_por?>/img/<?=$imgs['img'] ?>" class="sel_img" alt="">
                                            		</label>
                                            		<input type="checkbox" id="idpp-<?=$imgs['id'] ?>" value="<?=$imgs['id']?>" name="del-img[]">
-                                           		<input type="hidden" name="libelle-img[]" value="<?=$imgs['img']?>">
+                                           		
                                            	</div>
 															
 															<?php
@@ -215,7 +218,7 @@
 															
 															
 															
-															
+													$i++;		
 														}//while
 														
 													echo "</div></div><input type='hidden' name='img_nbr' value='$i'><input type='hidden' name='id_por' value='$id_por'>";	
