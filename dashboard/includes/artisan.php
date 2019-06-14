@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $id_art=$_SESSION['id_art'];
 if(empty($id_art)){
@@ -6,8 +7,8 @@ if(empty($id_art)){
 }
 $id_art=$_SESSION['id_art'];
 require("../connexion.php");
+mysqli_set_charset(mysqli_connect('localhost', 'root', '', 'mou9ef'),"utf8");
 
-mysqli_set_charset($link,"utf8");
 
 $artisan=mysqli_query($link,"select * from 
 artisan a,

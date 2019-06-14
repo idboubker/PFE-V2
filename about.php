@@ -26,16 +26,16 @@
     
     
     
-	<div id="all-all">
+	<div id="all-all" style="box-shadow: 0 12px 22px -22px rgba(0, 0, 0, 0.8) inset;">
    
    <div class="aboutus-section" style>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="aboutus">
-                        <h2 class="aboutus-title">About Us</h2>
-                        <p class="aboutus-text">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
-                        <p class="aboutus-text">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem</p>
+                        <h2 class="aboutus-title">Qui sommes-nous ?</h2>
+                        <p class="aboutus-text">Mou9ef.com est le site de référence pour trouver rapidement les coordonnées détaillées d'un artisan proche de vous et partout en Maroc, que ce soit son métier ou son activité. </p>
+                        <p class="aboutus-text">Bénéficiez des avis des utilisateurs de mou9ef.com, Plans, services et conseils. N'hésitez pas à partager votre visite, votre expérience sur mou9ef.com!</p>
                         
                     </div>
                 </div>
@@ -52,8 +52,8 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Work with heart</h4>
-                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
+                                    <h4>Besoin d'un artisan ?</h4>
+                                    <p>Vous projetez de faire des travaux dans votre appartement ou votre maison et vous avez besoin de trouver les meilleurs artisans proches de chez vous ? Mou9ef.com, premier annuaire collaboratif vous permet d'accéder en 3 clics à tous les artisans de votre commune.</p>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,10 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Reliable services</h4>
-                                    <p>Donec vitae sapien ut libero venenatis faucibu. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt</p>
+                                    <h4>Avec Mou9ef.com</h4>
+                                    <p>3 clics suffisent pour trouver gratuitement tous les artisans dans votre ville.</p>
+<p>Accédez aux fiches détaillées des Artisans (adresse, téléphone, devis, ...).</p>
+<p>Appuyez-vous sur nos membres en consultant les avis clients.</p>
                                 </div>
                             </div>
                         </div>
@@ -74,8 +76,8 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Great support</h4>
-                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
+                                    <h4>Vous êtes artisan ?</h4>
+                                    <p>Vous souhaitez apparaître dans notre annuaire ? Pour cela, rien de plus simple, transmettez-nous vos coordonnées complètes ainsi que votre secteur d'activités.</p>
                                 </div>
                             </div>
                         </div>
