@@ -111,10 +111,10 @@
 										<div class="btn-group btn-group-toggle btn-rad" data-toggle="buttons" align="center">
 											<div class="raddiv">
 												<label class="btn btn-danger rad">
-													<input type="radio" name="gender" id="jb-radio-1" value="Male" selected> Homme
+													<input type="radio" name="gender" id="jb-radio-1" value="Homme" selected> Homme
 												</label>
 												<label class="btn btn-danger rad">
-													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Femme
+													<input type="radio" name="gender" id="jb-radio-2" value="Femme"> Femme
 												</label>
 											</div>
 

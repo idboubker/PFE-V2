@@ -1,15 +1,22 @@
 <?php
+session_start();
 ?>
-<div class="fixed-top main-menu">
+<div class="fixed-top main-menu" id="navb">
     <div class="flex-center p-5">
       <ul class="nav flex-column">
 <li class="nav-item delay-1"><a class="nav-link" href="index.php">ACCUEIL</a></li>
         <li class="nav-item delay-2"><a class="nav-link" href="about.php">À PROPOS</a></li>
         <li class="nav-item delay-3"><a class="nav-link" href="result.php">CHERCHER</a></li>
-        <li class="nav-item delay-4"><a class="nav-link" href="register_hirafy.php">INSCRIPTION HIRAFY</a></li>
-        <li class="nav-item delay-4"><a class="nav-link" href="register_basic.php">S'INSCRIPTION BASIQUE</a></li>
-        <li class="nav-item delay-5"><a class="nav-link" href="authentification.php">CONNEXION</a></li>
-        
+        <?php if(!isset($_SESSION['username'])){
+        echo '<li class="nav-item delay-4"><a class="nav-link" href="register_hirafy.php">INSCRIPTION HIRAFY</a></li>
+        <li class="nav-item delay-4"><a class="nav-link" href="register_basic.php">S\'INSCRIPTION BASIQUE</a></li>
+        <li class="nav-item delay-5"><a class="nav-link" href="authentification.php">DASHBOARD</a></li>
+        <li class="nav-item delay-5"><a class="nav-link" href="authentification.php">CONNEXION</a></li>';
+        }else {
+          echo '<li class="nav-item delay-5"><a class="nav-link" href="dashboard/index.php">DASHBOARD</a></li>
+          <li class="nav-item delay-5"><a class="nav-link" href="includes/logout-inc.php">DÉCONNEXION</a></li>';
+        }
+        ?>
       </ul>
     </div>
   </div> 
@@ -47,7 +54,7 @@
             <a href="register_hirafy.php"><button class="btn btn-success sign">Hirafy</button></a>
             <a href="authentification.php"><button class="btn btn-success log">Connexion</button></a>';}
             else {
-              echo '<a href="includes/logout-inc.php"><button class="btn btn-success log">Déconnexion</button></a>';
+              echo '<a href="includes/logout-inc.php"><button class="btn btn-success log" >Logout</button></a>';
             }
             ?>
             </span>

@@ -8,7 +8,7 @@
             <div class="topbar-left">
                 <div class="text-center">
                     <!--<a href="index.php" class="logo">Admiry</a>-->
-                    <a href="index.php" class="logo"><img src="../img/logo-white.png" height="33" alt="logo"></a>
+                    <a href="../index.php" class="logo"><img src="../img/logo-white.png" height="33" alt="logo"></a>
                 </div>
             </div>
 

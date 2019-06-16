@@ -81,20 +81,20 @@
                                                     <div class="custom-control col-2" style="margin-left: 15px;margin-right: 5px;">
                                                            <?php
 														$homme="";$femme="";
-														if($art['sexe_art']=='Male'){
+														if($art['sexe_art']=='Homme'){
 															$homme=" checked";
 														}
-														if($art['sexe_art']=='Female'){
+														if($art['sexe_art']=='Femme'){
 															$femme=" checked";
 														}
 														
 														?>
-                                                            <input type="radio" class="custom-control-input" id="customCheck1" name="sexe_art" value="Male" <?=$homme?>>
-                                                            <label class="custom-control-label" for="customCheck1">homme</label>
+                                                            <input type="radio" class="custom-control-input" id="customCheck1" name="sexe_art" value="Homme" <?=$homme?>>
+                                                            <label class="custom-control-label" for="customCheck1">Homme</label>
                                                         </div>
                                                         <div class="custom-control col-2">
-                                                            <input type="radio" class="custom-control-input" value="Female" id="customCheck2" name="sexe_art" <?=$femme?>>
-                                                            <label class="custom-control-label" for="customCheck2">femme</label>
+                                                            <input type="radio" class="custom-control-input" value="Femme" id="customCheck2" name="sexe_art" <?=$femme?>>
+                                                            <label class="custom-control-label" for="customCheck2">Femme</label>
                                                         </div>
                                                          </div>
                                                 </div>
@@ -128,7 +128,7 @@
                                                 <label class="col-sm-2 col-form-label">Metier</label>
                                                 <div class="col-sm-10">
                                                     <select class="form-control"  name="metier" required>
-                                                        <option disabled>metier : </option>
+                                                        <option disabled>Metier : </option>
                                                         
                                                         
                                                         <?php

@@ -120,7 +120,7 @@
                                     <tr>
                                         <td width="40"><img src="img/our-font-awesome/gender.svg" alt=""></td>
                                         <td width="150">SEX</td>
-                                        <td>MALE</td>
+                                        <td>HOMME</td>
                                     </tr>
                                     <tr>
                                         <td><img src="img/our-font-awesome/calendar.svg" alt=""></td>

@@ -13,7 +13,7 @@ if($whatsapp==""){
 
 $facebook = $info['facebook'];
 if($facebook==""){
-	$facebook = "No facebook";
+	$facebook = "Inconnu";
 }
 
 $nom = strtoupper($info['nom_art']);
@@ -148,13 +148,14 @@ if($photo == ""){
 										<td><img src="img/our-font-awesome/calendar.svg" alt=""></td>
 										<td>ÂGE</td>
 										<td><?php
-										echo age($age);
+										if($age = ""){echo "Inconnu";}
+										else echo age($age);
 										?> ans</td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/eye.svg" alt=""></td>
 										<td>VUES</td>
-										<td>3929 personnes</td>
+										<td>13 personnes</td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/half_star.svg" alt=""></td>
@@ -173,13 +174,14 @@ if($photo == ""){
 										<td width="40"><img src="img/our-font-awesome/tel.svg" alt=""></td>
 										<td width="150">NUMÉRO TÉLÉPHONE</td>
 										<td> <?php	
-									echo $info['tele'];
+										if($info['tele'] = ""){echo "Inconnu";}
+										else	echo $info['tele'];
 									?></td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/whatsapp.svg" alt=""></td>
 										<td>WHATSAPP</td>
-										<td><?php	echo $whatsapp;		?></td>
+										<td><?php 	echo $whatsapp;		?></td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/message.svg" alt=""></td>

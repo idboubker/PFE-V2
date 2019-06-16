@@ -65,7 +65,7 @@ if (isset($_POST['basic-reg'])) {
 
                     mysqli_stmt_bind_param($stmt, "ssss", $login, $email, $tele, $hashedPwd);
                     mysqli_stmt_execute($stmt);
-                    header("location: ../register_basic.php?register=success");
+                    header("location: ../authentification.php?register=success");
                     exit();
                 }
             }

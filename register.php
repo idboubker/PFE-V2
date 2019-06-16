@@ -127,12 +127,12 @@
 											<div class="raddiv">
 											
 													<label class="btn btn-success rad" id="rad1" for="jb-radio-1">
-													<input type="radio" name="gender" id="jb-radio-1" value="Male"> Male
+													<input type="radio" name="gender" id="jb-radio-1" value="Homme"> Homme
 												</label>
 												
 												
 													<label class="btn btn-success rad" id="rad2" for="jb-radio-2">
-													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Female
+													<input type="radio" name="gender" id="jb-radio-2" value="Femme"> Femme
 												</label>
 												
 												
@@ -164,7 +164,7 @@
 
 								<div class="col-md-12">
 									<select name="metier" id="" class="form-control input_select ">
-										<option value="metier" disabled selected>metier</option>
+										<option value="metier" disabled selected>Metier</option>
 										<?php
 										$sql = "select * from meties";
 
