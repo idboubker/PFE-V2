@@ -315,7 +315,6 @@ if( $nbdata > 0){
         <i class="fa fa-star fa-2x" data-index="4"></i>
 				</div>
 				
-				<span class="right"><?php echo round($avg, 2) ?></span>
 			</div>
 			
 		</div>
