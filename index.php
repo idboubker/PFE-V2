@@ -71,7 +71,7 @@ mysqli_set_charset($link,"utf8");
                     </select>
                 </div>
                 <div class="col-md-3  p-2">
-                    <input type="submit" name="search" class="btn btn-success srh " value="SEARCH">
+                    <input type="submit" name="search" class="btn btn-success srh " value="CHERCHER">
                 </div>
                     </div>
                 </form>
@@ -144,7 +144,7 @@ mysqli_set_charset($link,"utf8");
     </div>
 
     <div class="seprate"></div>
-    <div class="b-art"><h3 class=" text-center">BEST ARTISANS</h3>
+    <div class="b-art"><h3 class=" text-center">MEILLEURS ARTISANS</h3>
     <div class="seprate"></div>
 
         <div class="row">
@@ -365,7 +365,7 @@ mysqli_set_charset($link,"utf8");
             <a href="">
                 <div class="no_p_m art shadow">
                     <div class="see-more text-center">
-                    See More ! <img src="img/seemore.svg" alt="">
+                    Voir Plus ! <img src="img/seemore.svg" alt="">
                     </div>
                 </div>
             </a>
@@ -383,7 +383,7 @@ mysqli_set_charset($link,"utf8");
 
         <div class="network b-art">
         <div class="seprate"></div>
-            <h3 class=" text-center">BEST ARTISANS</h3>
+            <h3 class=" text-center">MEILLEURS ARTISANS</h3>
             <div class="seprate"></div>
             <div class="row text-center">
                 <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-3 margin-seprate">
@@ -444,7 +444,7 @@ mysqli_set_charset($link,"utf8");
 
         <div class="container">
 
-            <div class="faq-title text-center shadow">FREQUENCY ASKED QUESTIONS</div>
+            <div class="faq-title text-center shadow">QUESTIONS FRÉQUEMMENT POSÉES</div>
             <div class="seprate"></div>
             <div class="row">
                 <div class="col-md-6 margin-seprate q-a">

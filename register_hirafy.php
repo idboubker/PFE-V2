@@ -31,14 +31,14 @@
 
 
 					<div class="height-part">
-						<h2>SIGN UP</h2>
+						<h2>S'INSCRIRE</h2>
 					</div>
 					<div class="height-part">
 						<ul class="list-group">
 							<div class="row">
 								<span id="h-account" class="col-xs-12 col-sm-12 col-md-12 account active">
 
-									<li class="list-group-item">Hirafy Account</li>
+									<li class="list-group-item">Compte Hirafy</li>
 
 								</span>
 							</div>
@@ -53,7 +53,7 @@
 								<div class="col-md-6">
 								<?php
 									if (isset($_GET['errn'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									if (isset($_GET['errpn'])){
 										echo "<span class='text-danger pt-0 error-log-re'>&nbsp;</span>";
@@ -66,7 +66,7 @@
 								<div class="col-md-6">
 									<?php
 									if (isset($_GET['errpn'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									if (isset($_GET['errn'])){
 										echo "<span class='text-danger pt-0 error-log-re'>&nbsp;</span>";
@@ -78,7 +78,7 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['errdn']) ){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									?>
 									<label style="align:left !important">
@@ -93,10 +93,10 @@
 								<div class="col-md-12">
 									<?php
 									// if (isset($_GET['error']) && $_GET['error'] == "emptyfields" ){
-									// 	echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+									// 	echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									// } 
 									?>
-									<strong class="">Gender :</strong>
+									<strong class="">Sexe :</strong>
 								</div>
 								<div class="col-md-12 ">
 									<div class="form-group text-center">
@@ -111,10 +111,10 @@
 										<div class="btn-group btn-group-toggle btn-rad" data-toggle="buttons" align="center">
 											<div class="raddiv">
 												<label class="btn btn-danger rad">
-													<input type="radio" name="gender" id="jb-radio-1" value="Male" selected> Male
+													<input type="radio" name="gender" id="jb-radio-1" value="Male" selected> Homme
 												</label>
 												<label class="btn btn-danger rad">
-													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Female
+													<input type="radio" name="gender" id="jb-radio-2" value="Female"> Femme
 												</label>
 											</div>
 
@@ -131,7 +131,7 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['errville'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 										
 									} 
 									?>
@@ -154,7 +154,7 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['errmet'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									?>
 									<select name="metier" id="" class="form-control input_select ">
@@ -172,7 +172,7 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['errmail']) ){
-								 		echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+								 		echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									if (isset($_GET['error']) && $_GET['error'] == "invalidmail" ){
 										echo "<span class='text-danger pt-0 error-log-re'>Invalid email</span>";
@@ -187,10 +187,10 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['errtele'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									?>
-									<input type="text" name="tele" class="form-control input_select " placeholder="Phone Number">
+									<input type="text" name="tele" class="form-control input_select " placeholder="Numéro de téléphone">
 								</div>
 										<!--
 								<div class="col-md-12">
@@ -210,13 +210,13 @@
 								<div class="col-md-6">
 									<?php
 									if (isset($_GET['errpwd'])){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									if (isset($_GET['error']) && $_GET['error'] == "notmatch" ){
-										echo "<span class='text-danger pt-0 error-log-re'>Passwords are not much</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Les mots de passe ne correspondent pas</span>";
 									} 
 									?>
-									<input type="password" name="pwd" class="form-control input_select " placeholder="Password">
+									<input type="password" name="pwd" class="form-control input_select " placeholder="Mot de passe">
 								</div>
 
 								<div class="col-md-6">
@@ -228,10 +228,10 @@
 										echo "<span class='text-danger pt-0 error-log-re'>&nbsp;</span>";
 									} 
 									?>
-									<input type="password" name="pwdrep" class="form-control input_select " placeholder="Rpeat Password">
+									<input type="password" name="pwdrep" class="form-control input_select " placeholder="Répéter le mot de passe">
 								</div>
 								<div class="col-md-12">
-									<input type="submit" name="hirafy-reg"  class="btn btn-success srh btn_grid sub" value="Sign up">
+									<input type="submit" name="hirafy-reg"  class="btn btn-success srh btn_grid sub" value="S'inscrire">
 								</div>
 
 
