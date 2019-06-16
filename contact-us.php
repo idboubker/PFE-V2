@@ -54,7 +54,7 @@
 							
 								<div class="col-md-12">
 									
-									<input type="text" name="login" class="form-control input_select " placeholder="VOTRE NOM" value="">
+									<input type="text" name="nom" class="form-control input_select " placeholder="VOTRE NOM" value="">
 								</div>
 								
 								
@@ -73,7 +73,7 @@
 								
 								<div class="col-md-12">
 								
-									<input type="text" name="tele" class="form-control input_select " placeholder="OBJET" value="">
+									<input type="text" name="objet" class="form-control input_select " placeholder="OBJET" value="">
 								</div>
 						
 							
@@ -134,7 +134,14 @@
 
 	<?php include "includes/footer.php"; ?>
 
-
+<script>
+	
+	$(document).ready(function(){
+  $('.nav-button').click(function(){
+	$('body').toggleClass('nav-open');
+  });
+});
+	</script>
 
 </body>
 

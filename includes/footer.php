@@ -75,8 +75,8 @@ if(isset($_POST['ok'])){
                 </div>
                 <div class="col-md-3 f-logo f-menu">
                     <a href="">Marrakech, Maroc</a><br>
-                    <a href="">+212 6 39 65 31 87</a><br>
-                    <a href="">mou9ef.services@gmail.com</a>
+                    <a href="tel:+212 639653187">+212 6 39 65 31 87</a><br>
+                    <a href="mailto:contact@mou9ef.com">mou9ef.services@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -96,3 +96,5 @@ if(isset($_POST['ok'])){
 			</div>
 		</div>
 	</div>
+	
+
