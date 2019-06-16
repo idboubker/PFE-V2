@@ -21,7 +21,7 @@
 
 
 				<div class="height-part">
-					<h2>LOGIN</h2>
+					<h2>CONNEXION</h2>
 				</div>
 				<div class="height-part">
 					<ul class="list-group">
@@ -38,14 +38,14 @@
 							<div class="col-md-12">
 								<?php
 								if (isset($_GET['error']) && $_GET['error'] == "reqfields") {
-									echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 								} else if (isset($_GET['error']) && $_GET['error'] == "reqfieldusr") {
-									echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 								}else if (isset($_GET['error']) && $_GET['error'] == "user") {
-									echo "<span class='text-danger pt-0 error-log-re'>Email or password are incorrect!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Email ou le mot de passe n'est pas correct!</span>";
 								}
 								else if (isset($_GET['error']) && $_GET['error'] == "pwd") {
-									echo "<span class='text-danger pt-0 error-log-re'>Password is incorrect!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Le mot de passe est incorrect!</span>";
 								}
 								?>
 								<input type="text" class="form-control input_select " placeholder="Email" name="email" 
@@ -54,27 +54,27 @@
 							<div class="col-md-12">
 								<?php
 								if (isset($_GET['error']) && $_GET['error'] == "reqfields") {
-									echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 								} else if (isset($_GET['error']) && $_GET['error'] == "reqfieldpwd") {
-									echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+									echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 								}
 								?>
-								<input type="password" class="form-control input_select " placeholder="Password" name="pwd">
+								<input type="password" class="form-control input_select " placeholder="Mot de passe" name="pwd">
 							</div>
 							<div class="cntr col-12">
 
 								<div class="d-inline col-6">
 									<input type="radio" name="account_type" id="radio1" value="hirafy" class="radio" checked />
-									<label for="radio1">Hirafy Account</label>
+									<label for="radio1">Compte Hirafy</label>
 								</div>
 
 								<div class="d-inline col-6">
 									<input type="radio" name="account_type" id="radio2" value="basic" class="radio" />
-									<label for="radio2">Basic Account</label>
+									<label for="radio2">Compte Basique</label>
 								</div>
 							</div>
 							<div class="col-md-12">
-								<input type="submit" class="btn btn-success srh btn_grid sub" value="Sign In">
+								<input type="submit" class="btn btn-success srh btn_grid sub" value="Connexion">
 							</div>
 						</div>
 					</div>

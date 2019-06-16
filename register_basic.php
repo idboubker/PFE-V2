@@ -31,14 +31,14 @@
 
 
 					<div class="height-part">
-						<h2>SIGN UP</h2>
+						<h2>S'INSCRIRE</h2>
 					</div>
 					<div class="height-part">
 						<ul class="list-group">
 							<div class="row">
 								<span id="b-account" class="col-xs-12 col-sm-12 col-md-12 account active">
 
-									<li class="list-group-item">Basic Account</li>
+									<li class="list-group-item">Basique Account</li>
 
 								</span>
 							</div>
@@ -53,14 +53,14 @@
 								<div class="col-md-12">
 									<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldlogin")) {
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									else if(isset($_GET['error']) && $_GET['error'] == "invalidname")
 									{
 										echo "<span class='text-danger pt-0 error-log-re'>Invalid name</span>";
 									}
 									?>
-									<input type="text" name="login" class="form-control input_select " placeholder="Full Name" 
+									<input type="text" name="login" class="form-control input_select " placeholder="Nom Complet" 
 									value=<?= isset($_GET['login'])? "{$_GET['login']}":"";?>>
 								</div>
 								<div class="col-md-12">
@@ -70,7 +70,7 @@
 								<div class="col-md-12">
 								<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldmail")){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									else if(isset($_GET['error']) && $_GET['error'] == "invalidmail")
 									{
@@ -87,24 +87,24 @@
 								<div class="col-md-12">
 								<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldtele")) {
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									}
 									?>
-									<input type="text" name="tele" class="form-control input_select " placeholder="Phone Number"
+									<input type="text" name="tele" class="form-control input_select " placeholder="Numéro de téléphone"
 									value=<?= isset($_GET['tele'])? "{$_GET['tele']}":"";?>>
 								</div>
 							
 								<div class="col-md-6">
 								<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldpwd") ){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									else if(isset($_GET['error']) && $_GET['error'] == "pwdmatch")
 									{
-										echo "<span class='text-danger pt-0 error-log-re'>Passwords are not match</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Les mots de passe ne correspondent pas</span>";
 									}
 									?>
-									<input type="password" name="pwd" class="form-control input_select " placeholder="Password">
+									<input type="password" name="pwd" class="form-control input_select " placeholder="Mot de passe">
 								</div>
 
 								<div class="col-md-6">
@@ -118,11 +118,11 @@
 									}
 									?>
 								
-									<input type="password" name="pwdrep" class="form-control input_select " placeholder="Rpeat Password">
+									<input type="password" name="pwdrep" class="form-control input_select " placeholder="Répéter le mot de passe">
 								</div>
 
 								<div class="col-md-12">
-									<input type="submit" name="basic-reg" class="btn btn-success srh btn_grid sub" value="Sign up">
+									<input type="submit" name="basic-reg" class="btn btn-success srh btn_grid sub" value="S'inscrire">
 								</div>
 
 

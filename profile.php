@@ -105,19 +105,19 @@ if($photo == ""){
 								<table class="text-left">
 									<tr id="ABOUT" class="active pointer">
 										<td width="40"><img src="img/our-font-awesome/about.svg" alt=""></td>
-										<td>ABOUT</td>
+										<td>À PROPOS</td>
 									</tr>
 									<tr id="VIEW-ON-MAP" class="pointer">
 										<td><img src="img/our-font-awesome/view_on_map.svg" alt=""></td>
-										<td>VIEW ON MAP</td>
+										<td>VOIR SUR LA CARTE</td>
 									</tr>
 									<tr id="REVIEWS" class="pointer">
 										<td><img src="img/our-font-awesome/reviews.svg" alt=""></td>
-										<td>REVIEWS</td>
+										<td>AVIS</td>
 									</tr>
 									<tr id="PORTFOLIO" class="pointer">
 										<td><img src="img/our-font-awesome/stars.svg" alt=""></td>
-										<td>PORTFOLIO</td>
+										<td>PORTEFEUILLE</td>
 									</tr>
 								</table>
 							</nav>
@@ -130,30 +130,30 @@ if($photo == ""){
 					<div class="con shadow">
 						<div class="information">
 							<div class="about">
-								<h1>ABOUT</h1>
+								<h1>À PROPOS</h1>
 								<hr class="h">
 
 								<table class="text-left">
 									<tr>
-										<td colspan="3" class="table_head">General Infos</td>
+										<td colspan="3" class="table_head">Infos générales</td>
 									</tr>
 									<tr>
 										<td width="40"><img src="img/our-font-awesome/gender.svg" alt=""></td>
-										<td width="150">SEX</td>
+										<td width="150">SEXE</td>
 										<td><?php	
 										echo $info['sexe_art'];
 										?></td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/calendar.svg" alt=""></td>
-										<td>AGE</td>
+										<td>ÂGE</td>
 										<td><?php
 										echo age($age);
-										?> years old</td>
+										?> ans</td>
 									</tr>
 									<tr>
 										<td><img src="img/our-font-awesome/eye.svg" alt=""></td>
-										<td>VIEWS</td>
+										<td>VUES</td>
 										<td>3929 personnes</td>
 									</tr>
 									<tr>
@@ -171,7 +171,7 @@ if($photo == ""){
 									</tr>
 									<tr>
 										<td width="40"><img src="img/our-font-awesome/tel.svg" alt=""></td>
-										<td width="150">NUMBER PHONE</td>
+										<td width="150">NUMÉRO TÉLÉPHONE</td>
 										<td> <?php	
 									echo $info['tele'];
 									?></td>
@@ -197,7 +197,7 @@ if($photo == ""){
 
 								<table class="text-left">
 									<tr>
-										<td colspan="3" class="table_head">Diplomas and experiences</td>
+										<td colspan="3" class="table_head">Diplômes et expériences</td>
 									</tr>
 									<tr>
 										<td width="30" valign="top"><img src="img/our-font-awesome/job.svg" alt=""></td>
@@ -277,7 +277,7 @@ if($photo == ""){
 
 							</div>
 							<div class="view-on-map">
-								<h1>View On Map</h1>
+								<h1>Voir sur la carte</h1>
 								<hr class="h"><br>
 								<div class="map">
 									<iframe src="<?php	echo $info['map'];	?>" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -287,7 +287,7 @@ if($photo == ""){
 							
 							<div class="reviews">
 
-								<h1>REVIEWS</h1>
+								<h1>AVIS</h1>
 								<hr class="h">
 
 								<div class="rate-all">
@@ -396,9 +396,9 @@ if($photo == ""){
 								<br>
 
 								<select name="" id="" class="question chev">
-									<option value="">Latest</option>
-									<option value="">Latest</option>
-									<option value="">Best</option>
+									<option value="">Dernière</option>
+									<option value="">Dernière</option>
+									<option value="">Meilleur</option>
 								</select>
 
 								<div class="com-section">
@@ -552,11 +552,11 @@ if($photo == ""){
 												<div class="col-md-12 col-md-offset-3">
 													<div class="panel panel-info">
 														<div class="panel-body">
-															<h5>Add a new comment :</h5>
+															<h5>Ajouter un nouveau commentaire:</h5>
 
 															<form class="form-inline">
-																<textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
-																<button class="btn btn-primary mt-2" type="button">Share</button>
+																<textarea placeholder="Écrivez votre commentaire ici!" class="pb-cmnt-textarea"></textarea>
+																<button class="btn btn-primary mt-2" type="button">Partager</button>
 															</form>
 														</div>
 													</div>
@@ -568,7 +568,7 @@ if($photo == ""){
 
 							</div>
 							<div class="portfolio">
-								<h1>PORTFOLIO</h1>
+								<h1>PORTEFEUILLE</h1>
 								<hr class="h">
 								<!-- <div class="portfolio-search">
 									<form action="">
@@ -609,7 +609,7 @@ if($photo == ""){
 					<div class="con similar">
 
 						<div class="information no_p">
-							<h1>Similar</h1>
+							<h1>Similaire</h1>
 							<hr class="h h_similar">
 							
 						<!--         similar             -->

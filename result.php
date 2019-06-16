@@ -169,7 +169,7 @@ $avg = $total / $numR;
 						</div>
 
 						<div class="col-sm-6 offset-sm-3 offset-md-0 col-md-2 p-2 p-lg-3 p-md-1 p-sm-1">
-							<input type="submit" name="search" class="btn btn-success srh" value="SEARCH">
+							<input type="submit" name="search" class="btn btn-success srh" value="CHERCHER">
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -183,7 +183,7 @@ $avg = $total / $numR;
 			<div class="found">
 				<div class="row">
 					<span class="col-6 col-sm-6 col-md-4 col-lg-3 text-center" id="fnd">
-						<p> <?= $nbdata ?> found!</p>
+						<p> <?= $nbdata ?> trouvé!</p>
 					</span>
 					<span class="col-0 col-sm-9 col-md-8 col-lg-8 favth-hidden-sm text-right hidden-small">
 						<hr></span>
@@ -197,7 +197,7 @@ $avg = $total / $numR;
 			<!--content-->
 
 			<div class="col-sm-6 col-md-4 col-lg-3 col_filter text-center shadow m-2">
-				<h3 class="ad_search">ADVANCED SEARCH</h3>
+				<h3 class="ad_search">RECHERCHE AVANCÉE</h3>
 				<hr>
 
 				<!-- <button class="btn btn_grid" type="submit">GRID</button><br>
@@ -206,15 +206,15 @@ $avg = $total / $numR;
 				<form action="result.php" method="GET">
 
 					<select name="typeTrav" id="" class="form-control input_select chev">
-					<option value="" >Individual or Company</option>
-						<option value="individual">individual</option>
-						<option value="company">company</option>
+					<option value="" >Particulier ou entreprise</option>
+						<option value="individual">Particulier</option>
+						<option value="company">entreprise</option>
 					</select>
 
 					<select name="sortBy" id="" class="form-control input_select chev">
-							<option value="a.id_art" >Sort By ..</option>
-							<option value="a.nom_art">Name</option>
-							<option value="a.dateInscription">Registration date</option>
+							<option value="a.id_art" >Trier par ..</option>
+							<option value="a.nom_art">Nom</option>
+							<option value="a.dateInscription">Date d'inscription</option>
 					</select>
 
 					<!-- <select name="" id="" class="form-control input_select chev">
@@ -244,26 +244,26 @@ $avg = $total / $numR;
 					<hr class="space">
 					<div class="left">
 						<input type="checkbox" name="descrF" class="" id="resume1">
-						<label for="resume1"> Resume included</label>
+						<label for="resume1"> CV comprend</label>
 					</div>
 
 					<br>
 					<hr class="space">
 					<div class="left">
 						<input type="checkbox" name="whatsappF" class="" id="resume2">
-						<label for="resume2"> WhatsApp included</label>
+						<label for="resume2"> WhatsApp comprend</label>
 					</div>
 
 					<br>
 					<hr class="space">
 					<div class="left">
 						<input type="checkbox" name="emailF" class="" id="resume3">
-						<label for="resume3"> Email included</label>
+						<label for="resume3"> Email comprend</label>
 					</div>
 
 					<br><br>
 					<hr class="space">
-					<button type="submit" name="searchFilter" class="btn btn-success srh btn_grid sub">Go
+					<button type="submit" name="searchFilter" class="btn btn-success srh btn_grid sub">Filtrer
 						<img src="img/go.png" alt="">
 					</button>
 				</form>

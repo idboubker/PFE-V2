@@ -46,7 +46,7 @@ if(isset($_POST['ok'])){
                     <div class="row ">
                         <div class="col-md-7 f-logo">
                             <img src="img/logo-white.png" alt=""><br>
-                            <p>1er annuaire collaboratif des Artisans en Maroc</p>
+                            <p>L'ANNUAIRE GRATUIT DES ARTISANS EN MAROC</p>
                         </div>
                         <div class="col-md-5 f-menu">
                             <a href="">Qui somes-nous?</a><br>
@@ -74,9 +74,9 @@ if(isset($_POST['ok'])){
                 </div>
                 </div>
                 <div class="col-md-3 f-logo f-menu">
-                    <a href="">Marrakech, Maroc</a><br>
-                    <a href="">+212 6 39 65 31 87</a><br>
-                    <a href="">mou9ef.services@gmail.com</a>
+                    <a href="https://www.google.com/maps/@31.6400947,-8.0784167,21z">Marrakech, Maroc</a><br>
+                    <a href="tel:+212 6 39 65 31 87">+212 6 39 65 31 87</a><br>
+                    <a href="mailto:contact@mou9ef.com">contact@mou9ef.com</a>
                 </div>
             </div>
         </div>
@@ -85,12 +85,12 @@ if(isset($_POST['ok'])){
    	<div class="container-fluid golden-footer">
 	<div class="container ">
 			<div class="row ">
-				<span class="text-left col-6">&copy; Mou9ef.com 2019</span>
+				<span class="text-left col-6">&copy; <a href="www.mou9ef.com" style="text-decoration:none; color:white;">mou9ef.com</a> 2019</span>
 				<span class="text-right col-6">
 					
-							<span><a href=""><img src="img/f-instg.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-twiter.svg" alt=""></a></span>
-							<span><a href=""><img src="img/f-facebook.svg" alt=""></a></span>
+							<span><a href="https://www.facebook.com/Mou9ef"><img src="img/f-instg.svg" alt=""></a></span>
+							<span><a href="https://twitter.com/mou9ef"><img src="img/f-twiter.svg" alt=""></a></span>
+							<span><a href="#"><img src="img/f-facebook.svg" alt=""></a></span>
 						
 				</span>
 			</div>

@@ -31,7 +31,7 @@
 
 
 					<div class="height-part">
-						<h2>CONTACT US</h2>
+						<h2>CONTACTEZ-NOUS</h2>
 					</div>
 					<div class="height-part">
 						<ul class="list-group">
@@ -62,7 +62,7 @@
 
 								<div class="col-md-12">
 								
-									<input type="text" name="email" class="form-control input_select " placeholder="EMAIL" value="">
+									<input type="text" name="email" class="form-control input_select " placeholder="VOTRE EMAIL" value="">
 								</div>
 								
 								
@@ -84,7 +84,7 @@
 								<div class="col-md-6">
 								<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldpwd") ){
-										echo "<span class='text-danger pt-0 error-log-re'>This field is required!</span>";
+										echo "<span class='text-danger pt-0 error-log-re'>Ce champ est requis!</span>";
 									} 
 									else if(isset($_GET['error']) && $_GET['error'] == "pwdmatch")
 									{
