@@ -183,11 +183,11 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
                                 <!-- style="text-align:center;" -->
                                 <h5><?php echo $BestAtisans['nom_art']." ".$BestAtisans['prenom_art'] ;?></h5>
                                 <div class="rating left">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
                                 </div>
                                 <span class="fa fa-heart-o right heart"></span>
                             </div>
@@ -286,12 +286,12 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
                 <div class="row">
                     <div class="col-md-6 margin-seprate q-a">
 
-                        <div class="question q1">Is mou9ef website free for use ?</div>
-                        <div class="answer a1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q1">Le site mou9ef est-il gratuit ?</div>
+                        <div class="answer a1">Complètement gratuit.</div>
                     </div>
                     <div class="col-md-6 margin-seprate q-a">
-                        <div class="question q2">Is mou9ef website free for use ?</div>
-                        <div class="answer a2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q2">comment faire une publicité avec mou9ef ?</div>
+                        <div class="answer a2">Envoyez nous votre demande de publication dans notre. <a href="mailto:contact@mou9ef.com">boite email</a> ou contactez nous par <a href="www.mou9ef.com/contact-us.php">le formulaire</a>.</div>
                     </div>
 
 
@@ -300,12 +300,12 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
 
 
                     <div class="col-md-6 margin-seprate q-a">
-                        <div class="question q3">Is mou9ef website free for use ?</div>
-                        <div class="answer  a3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q3">pourquoi devrais-je choisir mou9ef?</div>
+                        <div class="answer  a3">Pour économisez votre temps et vos efforts, et pour Trouver le meilleur talent en un clic.</div>
                     </div>
                     <div class="col-md-6  margin-seprate q-a">
-                        <div class="question q4">Is mou9ef website free for use ?</div>
-                        <div class="answer a4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q4">Comment puis-je aider mou9ef?</div>
+                        <div class="answer a4"></div>
                     </div>
 
 
@@ -314,12 +314,13 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
 
 
                     <div class="col-md-6 margin-seprate q-a">
-                        <div class="question q5">Is mou9ef website free for use ?</div>
-                        <div class="answer a5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q5">Puis-je être dans l'équipe technique de mou9ef?</div>
+                        <div class="answer a5">Il est possible d'etre un des admins de mou9ef.
+Juste envoyer un CV dans notre courrier électronique.</div>
                     </div>
                     <div class="col-md-6 margin-seprate q-a">
-                        <div class="question q6">Is mou9ef website free for use ?</div>
-                        <div class="answer a6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ratione rerum.</div>
+                        <div class="question q6">Est-ce que je peux gagner de l'argent avec mou9ef?</div>
+                        <div class="answer a6">Cela peut être fait en agissant en tant qu'intermédiaire qui conserve les artisans sur le site en enregistrant son téléphone et en travaillant ainsi en tant qu'un société d'artisans.</div>
                     </div>
 
                 </div>
