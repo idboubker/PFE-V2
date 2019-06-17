@@ -60,11 +60,11 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 								 "insert into `portfolio` (`id_por`,`image`,`description_projet`,`id_art`,`nom_projet`,`date_projet`) VALUES 
 								 (null,'$img_pro','$description_projet','$id_art','$nom_projet','$date_projet')") or die("error upadtae 2");	
 
-			 $idp=mysqli_insert_id($link);
+			 $id_por=mysqli_insert_id($link);//$idp
 			 
 			
 			
-			$path_to_directory = "../../uploads/projet/pro-".$idp."/img";
+			$path_to_directory = "../../uploads/projet/pro-".$id_por."/img";
 			if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 			    mkdir($path_to_directory, 0777, true);
 			}
@@ -73,12 +73,12 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 				for($i=0;$i<count($myfile['name']);$i++){
 					
 					
-				$imgs=$myfile['name'][$i] ;
+				$imgs=$myfile['name'][$i];
 	
 					
 					if(copy($myfile['tmp_name'][$i] , $path_to_directory."/".$imgs)){
 		
-						$addpro_pics=mysqli_query($link,"insert into `portfolio_pics`(`id`, `img`, `id_por`) values (null,'$imgs',$idp)")or die("error upadtae");
+						$addpro_pics=mysqli_query($link,"insert into `portfolio_pics`(`id`, `img`, `id_por`) values (null,'$imgs',$id_por)")or die("error upadtae");
 						
 		
 		
@@ -254,7 +254,9 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 							
 						}
 				if(empty($pr['image'])){
-						mysqli_query($link, "update `portfolio` set `image`='$i_o' where id_por='$id_por' and id_art='$id_art'") or die("error upadtae 2");	
+					
+						
+						mysqli_query($link, "update `portfolio` set `image`='$i_o' where id_por='$id_por' and id_art='$id_art'") or die("error upadtae 2");
 					}
 				//header("location: ../index.php");
 				
@@ -264,10 +266,22 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 				
 }//else
 
+$slt=mysqli_query($link,"select * from portfolio where id_por='$id_por' and id_art='$id_art'")or die("select error slt");
+	$sl=mysqli_fetch_array($slt);
+	if(empty($sl['image'])){
+		$img_p="https://www.mediafire.com/convkey/2a1f/fna0wbrruxqgsbrzg.jpg";
+		 mysqli_query($link, "update `portfolio` set image='$img_p', `description_projet`='$description_projet' ,`nom_projet`='$nom_projet',`date_projet`='$date_projet' where id_por='$id_por' and id_art='$id_art'") or die("error upadtae 2");	
+	}
+	echo $img_p;
 
+		
 }
 	
+	
+	
 	}
+
+
 header("location: ../index.php");
 /*
 
@@ -276,4 +290,9 @@ p.image,
 	p.description_projet, 
 	p.id_art, nom_projet, 
 	p.date_projet
-*/?>
+*/
+
+
+
+
+?>

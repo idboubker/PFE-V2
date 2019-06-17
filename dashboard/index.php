@@ -14,31 +14,48 @@
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- <!-- <link rel="shortcut icon" href="assets/images/faviicon.png"> --> -->
-
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+<link rel="stylesheet" href="../css/pop-up.css">
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="assets/plugins/morris/morris.css">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	<style>
-		.edi,.del{
-			
-			height: 20px;
-			width: 80px;
-			margin: 2px;
-			line-height: 15px;
-		}
-		.edi:hover,.del:hover{
-			
-			box-shadow: inset 0px 2px 5px rgba(57, 57, 57, 0.55);
-		}
-		.card-sec{
-			height: auto;
-		}
-	
-	</style>
+    
+     
+    
+    
+    <style>
+        .edi,.del{
+            
+            height: 20px;
+            width: 80px;
+            margin: 2px;
+            line-height: 15px;
+        }
+        .edi:hover,.del:hover{
+            
+            box-shadow: inset 0px 2px 5px rgba(57, 57, 57, 0.55);
+        }
+        .card-sec{
+            height: auto;
+        }
+    
+        *{
+            z-index: 5000 !important;
+        }
+        .showit{
+            display: block !important;
+            visibility: visible !important;
+        }
+        .pop-left img{
+            border-radius: 100%; 
+            width: 90px;
+            height: 90px;
+        }
+
+    </style>
 </head>
 
 <body class="fixed-left">
@@ -70,7 +87,7 @@
 
                         <div class="row">
                         
-							<div class=" col-md-12 col-xl-12">
+                            <div class=" col-md-12 col-xl-12">
                                 <div class="mini-stat clearfix bg-white row">
                                     <div class="form-group col-12 offset-1">
                                             <form action="includes/upload.php" method="post" enctype="multipart/form-data">   
@@ -80,7 +97,7 @@
                                                     <input class="form-control" name="avatar" type="file" id="example-email-input" required>
                                                 </div>
                                                 <div class="col-2">
-                                                	<input type="submit" name="addavatar" class="btn badge-danger " value="Envoyer">
+                                                    <input type="submit" name="addavatar" class="btn badge-danger " value="Envoyer">
                                                 </div>
                                                 </div>
                                               </form>  
@@ -108,16 +125,36 @@
                                                 </thead>
                                                 <tbody>
                                                    <?php
-													$projet=mysqli_query($link,"select * from portfolio p,artisan a where  a.id_art=p.id_art and p.id_art=$id_art")or header("../error/404.php");
-													
-													while($pro=mysqli_fetch_array($projet)){
-													?>
+                                                    $projet=mysqli_query($link,"select * from portfolio p,artisan a where  a.id_art=p.id_art and p.id_art=$id_art")or header("../error/404.php");
+                                                    //$idp="";
+                                                    while($pro=mysqli_fetch_array($projet)){
+                                                        $idp=$pro['id_por'];
+                                                    ?>
                                                     <tr>
                                                        
                                                         <td class="c-table__cell">
                                                             <div class="user-wrapper">
                                                                 <div class="img-user">
-                                                                    <img style="width:70px;height:70px;border-radius:5px;" src="../uploads/projet/pro-<?= $pro['id_por']."/img/".$pro['image'] ?>" alt="<?=$pro['nom_projet'] ?>" class="">
+                                                                    <?php
+																	$img_url="https://www.mediafire.com/convkey/2a1f/fna0wbrruxqgsbrzg.jpg";
+																	if($pro['image']!=$img_url){
+																		
+																	echo "
+																	
+																	<img style='width:70px;height:70px;border-radius:5px;' src='../uploads/projet/pro-{$pro['id_por']}/img/{$pro['image']}' alt='{$pro['nom_projet']}' class=''>
+																	
+																	";
+																	
+																	}else{
+																		
+																	echo "
+																	
+																	<img style='width:70px;height:70px;border-radius:5px;' src='{$img_url}' alt='{$pro['nom_projet']}' class=''>
+																	
+																	";
+																	
+																	}
+																	?>
                                                                    
                                                                 </div>
                                                                 <div class="text-user">
@@ -138,8 +175,8 @@
                                                         <a  href="add-projet.php?id_por=<?=$pro['id_por']?>&&id_art=<?=$id_art?>" id="confirmation"><span class="badge badge-warning edi">&lt;--&nbsp;&nbsp;edit&nbsp;&nbsp;--&gt;</span>
                                                         </a>
                                                         <br>
-                                                        <a href="includes/view-pro.php?id_por=<?=$pro['id_por']?>"><span class="badge badge-info edi">&lt;--&nbsp;view&nbsp;--&gt;</span>
-                                                        </a>
+                                                        <span style="cursor:pointer;" onClick='return popup(<?=$idp?>)' class="badge badge-info edi" >&lt;--&nbsp;view&nbsp;--&gt;</span>
+                                                        
                                                         
                                                         </td>
                                                         
@@ -178,10 +215,11 @@
                                                 </thead>
                                                 <tbody>
                                                    <?php
-													$projet2=mysqli_query($link,"select * from portfolio p,artisan a where  a.id_art=p.id_art and p.id_art!=$id_art")or header("../error/404.php");
-													//and metier=$pro['metier]
-													while($pro2=mysqli_fetch_array($projet2)){
-													?>
+                                                    $projet2=mysqli_query($link,"select * from portfolio p,artisan a where  a.id_art=p.id_art and p.id_art!=$id_art")or header("../error/404.php");
+                                                    //and metier=$pro['metier]
+                                                    while($pro2=mysqli_fetch_array($projet2)){
+                                                        $idp2=$pro2['id_por'];
+                                                    ?>
                                                     <tr>
                                                        
                                                         <td class="c-table__cell">
@@ -202,8 +240,8 @@
                                                         
                                                         <td class="c-table__cell ">
                                                         
-                                                        <a href="includes/view-pro.php?id_por=<?=$pro2['id_por']?>"><span class="badge badge-info edi">&lt;--&nbsp;view&nbsp;--&gt;</span>
-                                                        </a>
+                                                        <span  style="cursor:pointer;" onClick='return popup(<?=$idp2?>)'><span class="badge badge-info edi">&lt;--&nbsp;view&nbsp;--&gt;</span>
+                                                        </span>
                                                         </td>
                                                         
                                                         
@@ -241,7 +279,7 @@
                                     </div>
                                 </div>
                             </div>
-							-->
+                            -->
                         </div>
                         <!-- end row -->
 
@@ -264,13 +302,32 @@
     </div>
     <!-- END wrapper -->
 
+   <div id="popit212">
+    
+   </div>
+   
+   
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
+     
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/app.js"></script>
-  
 
+    
+    <script type="text/javascript">
+    
+function popup(current){
+     var a = $('#popit212').load('includes/pop.php','idp='+current);
+
+     $('#pop-it').addClass("showit");
+            
+    
+  }
+
+ 
+
+</script>
    
 
 </body>

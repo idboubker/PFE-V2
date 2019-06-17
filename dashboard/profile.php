@@ -121,7 +121,7 @@
                                             <div class="form-group row">
                                                 <label for="example-tel-input" class="col-sm-2 col-form-label">Whatsapp</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" name="whatsapp" type="tel" value="<?=$art['whatsapp'] ?>" id="example-tel-input" required>
+                                                    <input class="form-control" name="whatsapp" type="tel" value="<?=$art['whatsapp'] ?>" id="example-tel-input">
                                                 </div>
                                             </div>
                                              <div class="form-group row">
