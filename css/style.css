@@ -118,7 +118,9 @@ header .log {
 .ads {
     width: 500px;
     height: 70px;
-    background: #b9b9b9;
+    /* background: url("../img/ads.png") no-repeat 100% 58% ;   */
+    background: #fff url("../img/adsscsww1.jpg") ;
+    /* #b9b9b9 */
     margin: 0 auto;
 
 
@@ -268,7 +270,8 @@ header .log {
 
     margin-right: -5px;
     margin-left: -5px;
-    background-color: gray;
+    /* background-color: gray; */
+    background: #fff url("../img/ads3@bigBanner.jpg") ;
 }
 
 .img_bg {
@@ -336,7 +339,7 @@ header .log {
 .f-ads {
     width: 70%;
     height: 70px;
-    background: #b9b9b9;
+    background: #fff url("../img/banner@nahjhvq.jpg") ;
     margin: 0 auto;
     margin-bottom: 40px;
 

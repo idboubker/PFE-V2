@@ -45,5 +45,4 @@ $rsl1 = mysqli_query($link,$req1);
 $port1 = mysqli_fetch_assoc($rsl1);
 
 
-$pics = "select * from portfolio_pics f, portfolio p where p.id_art = $user and f.id_por = p.id_por";
-$picc = mysqli_query($link,$pics);
+

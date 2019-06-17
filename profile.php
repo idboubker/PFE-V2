@@ -587,18 +587,20 @@ if($photo == ""){
 								<div class="portfolio-result">
 									<div class="row">
 										<?php 
-										while($port = mysqli_fetch_assoc($rsl)){
-											$aa = "background: url('".$port['image']."') no-repeat 20% 30%";
-												echo '<div class="col-8 offset-2 offset-sm-1 col-sm-5 offset-md-0 col-md-6 offset-lg-1 col-lg-5 offset-xl-0 col-xl-4 res">
-												<div class="result-port" style="'.$aa.'">
+										while($port = mysqli_fetch_assoc($rsl)){ ?>
+											
+											<div class="col-8 offset-2 offset-sm-1 col-sm-5 offset-md-0 col-md-6 offset-lg-1 col-lg-5 offset-xl-0 col-xl-4 res">
+												<div class="result-port" style="background: url('<?=$port['image'];?>') no-repeat 20% 30%;">
 													<div class="res-info">
-														<h3>'.$port['nom_projet'].'</h3>
-														<span>102 <br><i class="fa fa-thumbs-up"></i></span>
-														<span>'.$port['date_par'].'</span>
+														<h3><?php echo $port['nom_projet'] ?></h3>
+														<!-- <span>102 <br><i class="fa fa-thumbs-up"></i></span> -->
+														<span><?php echo $port['date_par']?></span>
 													</div>
 												</div>
 											</div>';
-										} ?>
+
+										<?php } ?>
+
 									</div>
 								</div>
 							</div>
@@ -714,11 +716,14 @@ if($photo == ""){
 								';
 
 								 //------ project images ------------
-									/*
+									
+									$pics = "select * from portfolio_pics f, portfolio p where p.id_art = $user and f.id_por = p.id_por";
+									$picc = mysqli_query($link,$pics);
 									while($row = mysqli_fetch_assoc($picc)){
-								 echo '<div class="primary-img">
-                                <img src="img/'.$img['img'].'" alt="">
-							</div>';}*/
+								 		echo '<div class="primary-img">
+                                			  <img src="img/'.$row['img'].'" alt="">
+											  </div> <br><br>';} 
+									
 							//------------------------------------
 								
 

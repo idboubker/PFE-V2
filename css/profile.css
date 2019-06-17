@@ -391,6 +391,7 @@ tr:nth-child(5) .inside-holder {
 }
 
 .result-port {
+	border-radius: 10px; 
 	overflow: hidden;
 	margin-top: 15px;
 	height: 173px;

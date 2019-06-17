@@ -305,7 +305,7 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
                     </div>
                     <div class="col-md-6  margin-seprate q-a">
                         <div class="question q4">Comment puis-je aider mou9ef?</div>
-                        <div class="answer a4"></div>
+                        <div class="answer a4">Par le partage de nos artisans dans les réseaux sociaux.</div>
                     </div>
 
 
