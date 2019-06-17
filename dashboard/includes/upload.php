@@ -27,7 +27,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 		$del_i=mysqli_query($link,"select * from artisan_details where id_art='$id_art'")or die("error select !!:");
 		
 		$del_img=mysqli_fetch_array($del_i);
-		var_dump($del_img);
+		//var_dump($del_img);
 		if(!empty($del_img)){
 			$myFile = $path_to_directory.'/'.$del_img['photo'] ;
 			//echo '../../uploads/artisan/art-'.$id_art.'/img/'.$del_img['photo'];
@@ -88,7 +88,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 				
 					}
 			
-			header("location: ../index.php");
+			//header("location: ../index.php");
 					
 				}else{
 			
@@ -105,7 +105,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 				
 			if(isset($_POST['del-img'])){
 			$del_img = $_POST['del-img'];
-			
+			//echo "pro";
 				
 			$img_nbr=$_POST['img_nbr'];	//$i
 				
@@ -113,7 +113,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 
 				$proj=mysqli_query($link,"select * from portfolio  where id_por='$id_por' and id_art='$id_art' ")or die("error selecting");
 				$pr=mysqli_fetch_array($proj);
-				var_dump($pr);
+				//var_dump($pr);
 				
 				$proj_pic=mysqli_query($link,"select * from portfolio_pics  where id_por='$id_por' ")or die("error selecting");
 				//var_dump($del_img);
@@ -134,7 +134,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 						for($o=0;$o<sizeof($del_img);$o++){
 							echo "<h1>$o</h1>";
 							$i_pd=$ppc['id'];
-							if($del_img[$o]==$i_pd){
+							if(@$del_img[$o]==$i_pd){
 								
 								$path_to_directory="../../uploads/projet/pro-".$id_por.'/img/'.$ppc['img'];
 							if(file_exists($path_to_directory)){
@@ -142,6 +142,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 								//echo "<pre>delete file  -- ".$del_img[$o]."</pre>";
 					
 					}
+								
 								mysqli_query($link,"DELETE FROM `portfolio_pics` WHERE `portfolio_pics`.`id`=$i_pd")or die("error deleting images");
 							
 						}
@@ -155,15 +156,15 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 				
 				
 			}//if del img
-				
-				var_dump($_FILES['myup']['name']);
+				$i_o="";
+				//var_dump($_FILES['myup']['name']);
 				if(isset($_FILES['myup']['name'][0]) && !empty($_FILES['myup']['name'][0])){
-					var_dump($_FILES['myup']);
+					//var_dump($_FILES['myup']);
 					echo "sqdfqsdfqsf";
 					// date('Y-m-d h:m:s');	
 			
 			$myfile = $_FILES['myup'];
-			var_dump($myfile);
+			//var_dump($myfile);
 			$img_pro=$myfile['name'][0];
 			/*		
 			$nom_projet=$_POST['nom_projet'] ;
@@ -190,7 +191,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 		
 						$addpro_pics=mysqli_query($link,"insert into `portfolio_pics`(`id`, `img`, `id_por`) values (null,'$imgs',$id_por)")or die("error upadtae---");
 						
-					if($i==1){	
+					if($i==0){	
 					$i_o=$imgs;
 		}
 		
@@ -214,7 +215,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 						if(isset($_POST['del-img']) && $del_img_pri!=false){
 							echo "<h1>--".$del_img['ip']."--</h1>";
 							$proj_p=mysqli_query($link,"select * from portfolio_pics  where id_por='$id_por' ")or die("error selecting");
-							var_dump($proj_p);
+							//var_dump($proj_p);
 							$catch=0;
 							if(mysqli_num_rows($proj_p)>0){
 							while($row=mysqli_fetch_array($proj_p)){
@@ -267,7 +268,7 @@ if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
 }
 	
 	}
-
+header("location: ../index.php");
 /*
 
 p.image, 

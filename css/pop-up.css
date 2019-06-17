@@ -1,5 +1,4 @@
 
-
 .overlay {
     position: fixed;
     top: 0;
@@ -19,7 +18,7 @@
 }
 
 #pop-it{
-	display: none;
+	display: block;
 }
 
 .popup {
@@ -32,8 +31,9 @@
     transition: all 1s ease-in-out;
 }
 .popup .pop-left img{
-    border-radius: 50%;
+    border-radius: 100%;
     width: 90px;
+    height: 90px;
     float: left;
 }
 .popup .pop-right img{
