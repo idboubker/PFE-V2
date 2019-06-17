@@ -91,10 +91,6 @@
 										echo "<span class='text-danger pt-0 error-log-re'>Passwords are not match</span>";
 									}
 									?>
-									<input type="password" name="pwd" class="form-control input_select " placeholder="Password">
-								</div>
-							
-								<div class="col-md-6">
 									<?php
 									if (isset($_GET['error']) && ($_GET['error'] == "emptyfields" || $_GET['error'] == "emptyfieldpwd") ){
 										echo "<span class='text-danger pt-0 error-log-re'>&nbsp;</span>";
@@ -117,13 +113,9 @@
 								<div class="col-md-12">
 									<input type="submit" name="basic-reg" class="btn btn-success srh btn_grid sub" value="ENVOYER">
 								</div>
-
-
 							</div>
 						</div>
 					</form>
-
-
 				</div>
 			</div>
 		</div>

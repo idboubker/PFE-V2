@@ -156,12 +156,12 @@ mysqli_set_charset($link, "utf8");
 
 
 <?php
-$reslBest = mysqli_query($link,"select * from artisan a, artisan_details d where a.id_art = d.id_art");
+$reslBest = mysqli_query($link,"select * from artisan a, artisan_details d where a.id_art = d.id_art order by a.nom_art");
 $numberArt = mysqli_num_rows($reslBest);
 
 
 
-if($numberArt>12){$nbBA = 12;}
+if($numberArt>12){$nbBA = 11;}
 else { $nbBA = $numberArt; }
 $i=0;
 while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
@@ -199,7 +199,7 @@ while( $i < $nbBA && $BestAtisans = mysqli_fetch_assoc($reslBest) ){
 
 
                     <div class="offset-2 offset-sm-0 col-8 col-lg-3 col-md-4 col-sm-6 p-3">
-                        <a href="#" style="text-decoration:none;">
+                        <a href="BestARti.php" style="text-decoration:none;">
                             <div class="no_p_m art shadow">
                                 <div class="see-more text-center">
                                 VOIR PLUS <img src="img/seemore.svg" alt="">

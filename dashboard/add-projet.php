@@ -11,7 +11,7 @@
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/faviicon.png">
+        <!-- <link rel="shortcut icon" href="assets/images/faviicon.png"> -->
         <!-- Dropzone css -->
         <link href="assets/plugins/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css">
 
