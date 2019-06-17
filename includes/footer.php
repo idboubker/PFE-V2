@@ -49,8 +49,8 @@ if(isset($_POST['ok'])){
                             <p>L'ANNUAIRE GRATUIT DES ARTISANS EN MAROC</p>
                         </div>
                         <div class="col-md-5 f-menu">
-                            <a href="">Qui somes-nous?</a><br>
-                            <a href="">Contact</a><br>
+                            <a href="about.php">Qui somes-nous?</a><br>
+                            <a href="contact-us.php">Contact</a><br>
                           
                         </div>
                     </div>

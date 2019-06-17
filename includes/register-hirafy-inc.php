@@ -15,7 +15,7 @@ if (isset($_POST['hirafy-reg'])) {
     $tele = $_POST['tele'];
     $pwd = $_POST['pwd'];
     $pwdrep = $_POST['pwdrep'];
-    $avatar = "img/464220-PFPXU4-113.jpg";
+    $avatar = "img/464220-PFPXU4-11d3.jpg";
     date_default_timezone_set(date_default_timezone_get());
     //$dateInscription = date('Y-m-d', time());
 

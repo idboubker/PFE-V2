@@ -12,7 +12,7 @@
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="assets/images/faviicon.png">
+    <!-- <link rel="shortcut icon" href="assets/images/faviicon.png"> -->
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="assets/plugins/morris/morris.css">

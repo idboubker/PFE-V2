@@ -395,14 +395,10 @@ tr:nth-child(5) .inside-holder {
 	margin-top: 15px;
 	height: 173px;
 	width: 100%;
-	background-color: green;
-	
-	background-size: cover;
+	/* background-color: black; */
 }
 
 .portfolio-result .res {
-	background-color: ;
-
 	padding: 2px;
 	border-radius: 10px;
 

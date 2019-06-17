@@ -588,8 +588,9 @@ if($photo == ""){
 									<div class="row">
 										<?php 
 										while($port = mysqli_fetch_assoc($rsl)){
+											$aa = "background: url('".$port['image']."') no-repeat 20% 30%";
 												echo '<div class="col-8 offset-2 offset-sm-1 col-sm-5 offset-md-0 col-md-6 offset-lg-1 col-lg-5 offset-xl-0 col-xl-4 res">
-												<div class="result-port">
+												<div class="result-port" style="'.$aa.'">
 													<div class="res-info">
 														<h3>'.$port['nom_projet'].'</h3>
 														<span>102 <br><i class="fa fa-thumbs-up"></i></span>
@@ -697,7 +698,7 @@ if($photo == ""){
 							<br>
 							<div class="content">
 
-								<h5>Project:</h5>
+								<h5>Projet:</h5>
 								<p>
 								'.$port1['nom_projet'].' <br>
 									'.$info['nom_vil'].'
@@ -706,7 +707,7 @@ if($photo == ""){
 								<h5>Date:</h5>
 								<p>'.$port1['date_projet'].'</p>
 
-								<h5>Interior design and renderings produced by:</h5>
+								<h5>Description de projet:</h5>
 								<p>
 								'.$port1['description_projet'].'
 								</p>
