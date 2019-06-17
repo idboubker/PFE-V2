@@ -23,13 +23,12 @@ if (isset($_GET['searchFilter'])) {
 			$ville =	$_SESSION['ville'];
 			$metier = $_SESSION['metier'];
 			
-			
-
 			// d.typeTravail
 			$typeTrav = $_GET['typeTrav'];
 			if($typeTrav == ''){
 				$typeTrav = '%';
 			}
+					
 
 			// order by  d.dateInscription	
 			$sortby = $_GET['sortBy'];
@@ -37,6 +36,7 @@ if (isset($_GET['searchFilter'])) {
 			//Email Filter
 			if (isset($_GET['emailF'])) { $EmInc = '%@%'; }
 			else { $EmInc = '%'; }
+
 
 			//Whatsapp Filter  d.whatsapp
 			if (isset($_GET['whatsappF'])) { $whtsinc = '%0%'; }
@@ -51,9 +51,10 @@ if (isset($_GET['searchFilter'])) {
 			if($filter2==""){$filter2='%';}
 
 
-			$sql=" select * from artisan a, artisan_details d where d.typeTravail like '$typeTrav' and a.email_art like '$EmInc' and d.whatsapp like '$whtsinc' and d.description like '$resumInc' and (a.nom_art like '$filter2' or a.prenom_art like '$filter2' or a.email_art like '$filter2') and a.ville = '$ville' and a.metier = '$metier' and a.	id_art = d.	id_art order by $sortby";
+			$sql=" select * from artisan a, artisan_details d where d.typeTravail like '$typeTrav' and a.email_art like '$EmInc' and d.whatsapp like '$whtsinc' and d.description like '$resumInc' and (a.nom_art like '$filter2' or a.prenom_art like '$filter2' or a.email_art like '$filter2') and a.ville = '$ville' and a.metier = '$metier' and a.id_art = d.id_art order by $sortby";
 			$rsl = mysqli_query($link,$sql);
 			$nbdata = mysqli_num_rows($rsl);
+
 }
 
 
@@ -63,32 +64,8 @@ if (isset($_GET['searchFilter'])) {
 
 
 
-$conn = mysqli_connect('localhost', 'root', '', 'mou9ef');
 
-if (isset($_GET['save'])) {
-    $uID = $conn->real_escape_string($_GET['uID']);
-    $ratedIndex = $conn->real_escape_string($_GET['note_eva']);
-    $ratedIndex++;
 
-    if (!$uID) {
-        $conn->query("INSERT INTO evaluation (rateIndex) VALUES ('$ratedIndex')");
-        $sql = $conn->query("SELECT id_eva FROM evaluation ORDER BY id_eva DESC LIMIT 1");
-        $uData = $sql->fetch_assoc();
-        $uID = $uData['id_eva'];
-    } else
-        $conn->query("UPDATE evaluation SET note_eva='$ratedIndex' WHERE id_eva='$uID'");
-
-    exit(json_encode(array('id_eva' => $uID)));
-}
-
-$sql = $conn->query("SELECT id_eva FROM evaluation");
-$numR = $sql->num_rows;
-
-$sql = $conn->query("SELECT SUM(note_eva) AS total FROM evaluation");
-$rData = $sql->fetch_array();
-$total = $rData['total'];
-
-$avg = $total / $numR;
 ?>
 
 
@@ -308,15 +285,13 @@ if( $nbdata > 0){
 			<div class="des_art">
 				<h5><?php echo $row['nom_art']." ".$row['prenom_art'] ;?> </h5>
 				<div class="rating left">
-				<i class="fa fa-star fa-2x" data-index="0"></i>
-        <i class="fa fa-star fa-2x" data-index="1"></i>
-        <i class="fa fa-star fa-2x" data-index="2"></i>
-        <i class="fa fa-star fa-2x" data-index="3"></i>
-        <i class="fa fa-star fa-2x" data-index="4"></i>
+				<i class="fa fa-star fa-2x"></i>
+				<i class="fa fa-star fa-2x"></i>
+				<i class="fa fa-star fa-2x"></i>
+				<i class="fa fa-star fa-2x"></i>
+				<i class="fa fa-star fa-2x"></i>
 				</div>
-				
 			</div>
-			
 		</div>
     </div>
 	

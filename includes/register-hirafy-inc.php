@@ -15,6 +15,7 @@ if (isset($_POST['hirafy-reg'])) {
     $tele = $_POST['tele'];
     $pwd = $_POST['pwd'];
     $pwdrep = $_POST['pwdrep'];
+    $avatar = "img/464220-PFPXU4-113.jpg";
     date_default_timezone_set(date_default_timezone_get());
     //$dateInscription = date('Y-m-d', time());
 
@@ -93,6 +94,9 @@ if (isset($_POST['hirafy-reg'])) {
                     mysqli_stmt_bind_param($stmt, "sssssssss", $nom, $prenom, $sexe, $dateNaissance, $ville, $metier, $email, $tele, $hashedPwd);
                     mysqli_stmt_execute($stmt);
                     header("location: ../authentification.php?register=success");
+                    $idp = mysqli_insert_id($link);
+                    $insertAvatar = "INSERT INTO artisan_details (photo,id_art) VALUES ('img/464220-PFPXU4-113.jpg',$idp)";
+                    mysqli_query($link,$insertAvatar);
                     exit();
                 } else {
                     header("location: ../register_hirafy.php?error=sqlerror");

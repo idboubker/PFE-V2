@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 <div class="fixed-top main-menu" id="navb">
     <div class="flex-center p-5">
